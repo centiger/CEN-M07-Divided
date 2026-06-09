@@ -241,6 +241,11 @@ html,body{
   width:100%;margin-top:12px;border:0;background:#70451f;color:white;
   border-radius:11px;padding:10px;font-weight:900;cursor:pointer;
 }
+/* 핵심 사건 허브목록 팝업 */
+.hubListModal{display:grid;gap:8px;margin-top:6px}
+.hubListModal button{width:100%;border:1px solid #c4ab87;background:#fff8e8;border-radius:13px;padding:11px 12px;text-align:left;font-weight:900;color:#17304a;box-shadow:0 1px 3px rgba(60,35,15,.06);}
+.hubListModal button span{display:block;margin-top:3px;font-size:11px;color:#6d5b40;font-weight:800}
+
 
 @media(max-width:420px){
   .matrix{grid-template-columns:72px 1fr !important;}
@@ -650,13 +655,38 @@ if('serviceWorker' in navigator){
   const footerLinks = {
     '성경연대기':'https://centiger.github.io/cen-bible-chrololgy/?view=timeline',
     '연결탐험':'https://centiger.github.io/cen-bible-chrololgy/#hub',
-    '한눈에 성경':'https://centiger.github.io/CEN-Bible2.0/#overview66',
-    '핵심 사건':'https://centiger.github.io/cen-bible-chrololgy/?view=timeline'
+    '한눈에 성경':'https://centiger.github.io/CEN-Bible2.0/#overview66'
   };
+  const hubItems = [
+    {no:'①', title:'갈멜산 대결', sub:'여호와냐 바알이냐', url:'hubs/index.html?hub=carmel'},
+    {no:'②', title:'북이스라엘 멸망', sub:'사마리아 함락', url:'hubs/index.html?hub=north-israel-fall'},
+    {no:'③', title:'히스기야와 앗수르 위기', sub:'예루살렘 포위와 구원', url:'hubs/index.html?hub=hezekiah-assyria'},
+    {no:'④', title:'요시야 개혁', sub:'율법책 발견과 마지막 개혁', url:'hubs/index.html?hub=josiah-reform'},
+    {no:'⑤', title:'예루살렘 함락', sub:'성전 파괴와 포로', url:'hubs/index.html?hub=jerusalem-fall'}
+  ];
+  function openHubList(){
+    mt.textContent = '분열왕국 핵심 사건';
+    mb.innerHTML = '<div class="hubListModal">' + hubItems.map(h =>
+      `<button type="button" data-hub-url="${h.url}">${h.no} ${h.title}<span>${h.sub}</span></button>`
+    ).join('') + '</div>';
+    modal.classList.add('show');
+  }
   document.addEventListener('click', function(e){
+    const hubBtn = e.target.closest('[data-hub-url]');
+    if(hubBtn){
+      e.preventDefault();
+      window.open(hubBtn.dataset.hubUrl, '_self');
+      return;
+    }
     const btn = e.target.closest('footer.actions .action');
     if(!btn) return;
     const label = (btn.textContent || '').trim();
+    if(label === '핵심 사건'){
+      e.preventDefault();
+      e.stopPropagation();
+      openHubList();
+      return;
+    }
     const url = footerLinks[label];
     if(!url) return;
     e.preventDefault();
