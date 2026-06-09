@@ -4,7 +4,7 @@ const $=id=>document.getElementById(id);
 const params=new URLSearchParams(location.search);
 
 async function loadData(){
-  const res=await fetch('data/hubs.json?v=galmel-standard-1',{cache:'no-store'});
+  const res=await fetch('data/hubs.json?v=galmel-standard-2',{cache:'no-store'});
   const data=await res.json();
   HUBS=data.hubs||[];
   const slug=params.get('hub')||data.defaultHub||(HUBS[0]&&HUBS[0].slug);
@@ -59,7 +59,7 @@ function renderHub(slug){
   setOptional('bibleSection','bible',current.bible);
   setOptional('messageSection','message',current.message, v=>`<div class="messageStrong">${formatText(v)}</div>`);
 
-  $('timeline').innerHTML=(current.timeline||[]).map(t=>`<div class="t ${t.active?'active':''}">${escapeHtml(t.year||'')}<div class="dot"></div>${escapeHtml(t.label||'')}</div>`).join('');
+  if($('timeline')) $('timeline').innerHTML=(current.timeline||[]).map(t=>`<div class="t ${t.active?'active':''}">${escapeHtml(t.year||'')}<div class="dot"></div>${escapeHtml(t.label||'')}</div>`).join('');
   $('links').innerHTML=(current.links||[]).map((l,i)=>`<button class="${i===1?'primary':''}" data-url="${l.url||''}" data-hub="${l.hub||''}">${escapeHtml(l.label||'')}</button>`).join('');
   $('prevBtn').textContent=current.prevLabel||'이전 허브';
   $('nextBtn').textContent=current.nextLabel||'다음 허브';
@@ -106,5 +106,5 @@ $('backBtn').onclick=()=>openUrl('../index.html');
 $('hubListBtn').onclick=()=>$('drawer').classList.add('show');
 $('drawerClose').onclick=()=>$('drawer').classList.remove('show');
 $('drawer').onclick=e=>{if(e.target.id==='drawer')$('drawer').classList.remove('show')};
-if('serviceWorker'in navigator)navigator.serviceWorker.register('./sw.js?v=galmel-standard-1').catch(()=>{});
+if('serviceWorker'in navigator)navigator.serviceWorker.register('./sw.js?v=galmel-standard-2').catch(()=>{});
 loadData();
