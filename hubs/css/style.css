@@ -9,3 +9,9 @@
 .messageCard{background:linear-gradient(135deg,#17304a,#24425f);color:#fff;border-color:#17304a}
 .messageStrong{font-size:13.2px;line-height:1.65;font-weight:950;text-align:center;word-break:keep-all}
 .cleanList{margin:0;padding-left:18px}.cleanList li{margin:4px 0}.arrowFlow{display:flex;gap:6px;flex-wrap:wrap;align-items:center;justify-content:center;line-height:1.5}.arrowFlow span{background:#f2ead7;border:1px solid #d1bb92;border-radius:999px;padding:7px 9px;font-size:11.5px;font-weight:900;color:#17304a}.arrowFlow b{color:#9d7a46}.optional[style*="display: none"]{margin:0}
+
+
+/* Galmel standard v2 fixes */
+.messageCard{background:linear-gradient(135deg,#17304a,#24425f);color:#fff !important;border-color:#17304a}
+.messageCard,.messageCard *{color:#fff !important}
+.messageCard .messageStrong{color:#fff !important;text-shadow:0 1px 2px rgba(0,0,0,.28)}
