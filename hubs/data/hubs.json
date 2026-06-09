@@ -1,0 +1,646 @@
+{
+  "defaultHub": "carmel",
+  "hubs": [
+    {
+      "slug": "carmel",
+      "title": "갈멜산 대결",
+      "year": "BC850경",
+      "short": "여호와냐 바알이냐",
+      "kicker": "허브 01 · 갈멜산 대결",
+      "heroTitle": "여호와냐, 바알이냐",
+      "heroText": "엘리야의 기도와 하늘의 불을 통해 하나님이 참 하나님이심을 드러낸 사건입니다.",
+      "tags": [
+        "열왕기상 18장",
+        "북이스라엘",
+        "아합 시대",
+        "하늘의 불"
+      ],
+      "mainFlowTitle": "엘리야의 흐름",
+      "mainFlow": [
+        {
+          "icon": "🌾",
+          "title": "기근 예언",
+          "text": "왕상 17:1"
+        },
+        {
+          "icon": "🐦",
+          "title": "까마귀 공급",
+          "text": "그릿 시냇가"
+        },
+        {
+          "icon": "🏺",
+          "title": "사르밧 과부",
+          "text": "기름과 가루"
+        },
+        {
+          "icon": "🔥",
+          "title": "갈멜산 대결",
+          "text": "왕상 18장"
+        }
+      ],
+      "map": "assets/maps/carmel-map.png",
+      "mapTitle": "갈멜산 지도",
+      "mapCaption": "갈멜산·사마리아·두로·시돈을 중심으로 바알숭배 유입과 갈멜산 대결의 의미를 확인합니다.",
+      "keyItems": [
+        {
+          "icon": "🔥",
+          "title": "하나님의 응답",
+          "text": "하나님은 불로 응답하십니다."
+        },
+        {
+          "icon": "👑",
+          "title": "아합 시대",
+          "text": "우상숭배가 극심했던 시기입니다."
+        },
+        {
+          "icon": "🛕",
+          "title": "바알숭배",
+          "text": "비와 풍요의 신앙으로 포장된 우상숭배입니다."
+        },
+        {
+          "icon": "📣",
+          "title": "백성의 고백",
+          "text": "여호와 그는 하나님이시라."
+        }
+      ],
+      "overviewFlow": [
+        {
+          "icon": "🪨",
+          "title": "제단 수축",
+          "text": "무너진 제단"
+        },
+        {
+          "icon": "💧",
+          "title": "물을 붓다",
+          "text": "도랑까지 가득"
+        },
+        {
+          "icon": "🙏",
+          "title": "엘리야 기도",
+          "text": "왕상 18:36"
+        },
+        {
+          "icon": "🔥",
+          "title": "불이 임함",
+          "text": "하나님의 응답"
+        }
+      ],
+      "timeline": [
+        {
+          "year": "BC930",
+          "label": "왕국분열"
+        },
+        {
+          "year": "BC850",
+          "label": "갈멜산",
+          "active": true
+        },
+        {
+          "year": "BC841",
+          "label": "예후"
+        },
+        {
+          "year": "BC722",
+          "label": "북이스라엘 멸망"
+        }
+      ],
+      "links": [
+        {
+          "label": "Matrix",
+          "url": "../index.html"
+        },
+        {
+          "label": "북이스라엘 멸망",
+          "hub": "north-israel-fall"
+        },
+        {
+          "label": "성경연대기",
+          "url": "https://centiger.github.io/cen-bible-chrololgy/?view=timeline"
+        },
+        {
+          "label": "연결탐험",
+          "url": "https://centiger.github.io/cen-bible-chrololgy/#hub"
+        }
+      ],
+      "prev": "",
+      "next": "north-israel-fall",
+      "prevLabel": "",
+      "nextLabel": "북이스라엘 멸망",
+      "verse": "열왕기상 18:21\n'너희가 어느 때까지 둘 사이에서 머뭇머뭇 하려느냐'",
+      "events": "아합과 이세벨 → 3년 6개월 가뭄 → 갈멜산 대결 → 하늘의 불 → 바알 선지자 심판 → 비의 회복",
+      "meaning": "하나님은 유일한 참 하나님이시다.\n참 예배와 거짓 예배는 공존할 수 없다.",
+      "integration": "시내산 ↔ 갈멜산\n엘리야 ↔ 세례요한\n갈멜산 ↔ 십자가\n갈멜산 ↔ 요한계시록",
+      "bible": "열왕기상 17~19장\n말라기 4:5~6\n마태복음 17장\n야고보서 5:17~18",
+      "message": "믿음은 중립이 아니라 선택이다."
+    },
+    {
+      "slug": "north-israel-fall",
+      "title": "북이스라엘 멸망",
+      "year": "BC722",
+      "short": "사마리아 함락",
+      "kicker": "허브 02 · 북이스라엘 멸망",
+      "heroTitle": "사마리아 함락",
+      "heroText": "앗수르의 침공으로 북이스라엘은 멸망하고 백성들은 포로로 흩어집니다.",
+      "tags": [
+        "열왕기하 17장",
+        "앗수르",
+        "사마리아",
+        "포로"
+      ],
+      "mainFlowTitle": "멸망의 흐름",
+      "mainFlow": [
+        {
+          "icon": "👑",
+          "title": "여로보암 죄",
+          "text": "금송아지"
+        },
+        {
+          "icon": "🛕",
+          "title": "바알숭배",
+          "text": "아합 시대"
+        },
+        {
+          "icon": "📣",
+          "title": "선지자 경고",
+          "text": "아모스·호세아"
+        },
+        {
+          "icon": "🏚️",
+          "title": "사마리아 함락",
+          "text": "BC722"
+        }
+      ],
+      "map": "assets/maps/north-israel-map.png",
+      "mapTitle": "북이스라엘과 앗수르의 관계 지도",
+      "mapCaption": "앗수르의 남하, 사마리아 함락, 포로와 흩어짐의 흐름을 확인합니다.",
+      "keyItems": [
+        {
+          "icon": "📖",
+          "title": "아모스",
+          "text": "사회 불의를 책망합니다."
+        },
+        {
+          "icon": "💔",
+          "title": "호세아",
+          "text": "언약 배반을 경고합니다."
+        },
+        {
+          "icon": "⚔️",
+          "title": "앗수르",
+          "text": "심판의 도구가 된 제국입니다."
+        },
+        {
+          "icon": "🌍",
+          "title": "흩어짐",
+          "text": "포로와 강제이주가 이어집니다."
+        }
+      ],
+      "overviewFlow": [
+        {
+          "icon": "👑",
+          "title": "여로보암 죄",
+          "text": "시작"
+        },
+        {
+          "icon": "📣",
+          "title": "경고",
+          "text": "선지자"
+        },
+        {
+          "icon": "⚔️",
+          "title": "침공",
+          "text": "앗수르"
+        },
+        {
+          "icon": "🏚️",
+          "title": "멸망",
+          "text": "사마리아"
+        }
+      ],
+      "timeline": [
+        {
+          "year": "BC850",
+          "label": "갈멜산"
+        },
+        {
+          "year": "BC760",
+          "label": "아모스"
+        },
+        {
+          "year": "BC755",
+          "label": "호세아"
+        },
+        {
+          "year": "BC722",
+          "label": "북이스라엘 멸망",
+          "active": true
+        }
+      ],
+      "links": [
+        {
+          "label": "갈멜산 대결",
+          "hub": "carmel"
+        },
+        {
+          "label": "히스기야 위기",
+          "hub": "hezekiah-assyria"
+        },
+        {
+          "label": "성경연대기",
+          "url": "https://centiger.github.io/cen-bible-chrololgy/?view=timeline"
+        },
+        {
+          "label": "Matrix",
+          "url": "../index.html"
+        }
+      ],
+      "prev": "carmel",
+      "next": "hezekiah-assyria",
+      "prevLabel": "갈멜산 대결",
+      "nextLabel": "히스기야 위기"
+    },
+    {
+      "slug": "hezekiah-assyria",
+      "title": "히스기야와 앗수르 위기",
+      "year": "BC701",
+      "short": "예루살렘 포위",
+      "kicker": "허브 03 · 히스기야와 앗수르 위기",
+      "heroTitle": "예루살렘 포위와 하나님의 구원",
+      "heroText": "산헤립의 침공 앞에서 히스기야는 성전에 올라가 기도하고, 이사야는 하나님의 구원을 예언합니다.",
+      "tags": [
+        "열왕기하 18~19장",
+        "이사야 36~37장",
+        "라기스",
+        "예루살렘"
+      ],
+      "mainFlowTitle": "위기의 흐름",
+      "mainFlow": [
+        {
+          "icon": "⚔️",
+          "title": "앗수르 침공",
+          "text": "BC701"
+        },
+        {
+          "icon": "🏚️",
+          "title": "라기스 함락",
+          "text": "유다 압박"
+        },
+        {
+          "icon": "🏛️",
+          "title": "예루살렘 포위",
+          "text": "위기 절정"
+        },
+        {
+          "icon": "🙏",
+          "title": "히스기야 기도",
+          "text": "성전"
+        }
+      ],
+      "map": "assets/maps/hezekiah-map.png",
+      "mapTitle": "앗수르 침공과 예루살렘 포위 지도",
+      "mapCaption": "라기스 함락, 예루살렘 포위, 히스기야의 기도와 이사야의 예언 흐름을 확인합니다.",
+      "keyItems": [
+        {
+          "icon": "👑",
+          "title": "히스기야",
+          "text": "위기 앞에서 기도한 왕입니다."
+        },
+        {
+          "icon": "⚔️",
+          "title": "산헤립",
+          "text": "유다를 침공한 앗수르 왕입니다."
+        },
+        {
+          "icon": "📜",
+          "title": "이사야",
+          "text": "하나님의 구원을 선포합니다."
+        },
+        {
+          "icon": "💧",
+          "title": "히스기야 터널",
+          "text": "포위 위기 속 물 공급 대책입니다."
+        }
+      ],
+      "overviewFlow": [
+        {
+          "icon": "⚔️",
+          "title": "침공",
+          "text": "앗수르"
+        },
+        {
+          "icon": "🏚️",
+          "title": "라기스",
+          "text": "함락"
+        },
+        {
+          "icon": "🏛️",
+          "title": "포위",
+          "text": "예루살렘"
+        },
+        {
+          "icon": "🕊️",
+          "title": "구원",
+          "text": "하나님"
+        }
+      ],
+      "timeline": [
+        {
+          "year": "BC722",
+          "label": "북이스라엘 멸망"
+        },
+        {
+          "year": "BC701",
+          "label": "앗수르 위기",
+          "active": true
+        },
+        {
+          "year": "BC681",
+          "label": "산헤립 최후"
+        },
+        {
+          "year": "BC622",
+          "label": "요시야 개혁"
+        }
+      ],
+      "links": [
+        {
+          "label": "북이스라엘 멸망",
+          "hub": "north-israel-fall"
+        },
+        {
+          "label": "요시야 개혁",
+          "hub": "josiah-reform"
+        },
+        {
+          "label": "성경연대기",
+          "url": "https://centiger.github.io/cen-bible-chrololgy/?view=timeline"
+        },
+        {
+          "label": "Matrix",
+          "url": "../index.html"
+        }
+      ],
+      "prev": "north-israel-fall",
+      "next": "josiah-reform",
+      "prevLabel": "북이스라엘",
+      "nextLabel": "요시야 개혁"
+    },
+    {
+      "slug": "josiah-reform",
+      "title": "요시야 개혁",
+      "year": "BC622",
+      "short": "율법책 발견",
+      "kicker": "허브 04 · 요시야 개혁",
+      "heroTitle": "마지막 회복의 불꽃",
+      "heroText": "성전 수리 중 율법책이 발견되고, 요시야는 언약을 갱신하며 전국적 개혁을 추진합니다.",
+      "tags": [
+        "열왕기하 22~23장",
+        "성전",
+        "율법책",
+        "유월절"
+      ],
+      "mainFlowTitle": "개혁의 흐름",
+      "mainFlow": [
+        {
+          "icon": "🏛️",
+          "title": "성전 수리",
+          "text": "예배 회복"
+        },
+        {
+          "icon": "📖",
+          "title": "율법책 발견",
+          "text": "말씀"
+        },
+        {
+          "icon": "👑",
+          "title": "언약 갱신",
+          "text": "요시야"
+        },
+        {
+          "icon": "🔥",
+          "title": "우상 제거",
+          "text": "개혁"
+        }
+      ],
+      "map": "assets/maps/josiah-map.png",
+      "mapTitle": "요시야 개혁 지도",
+      "mapCaption": "예루살렘 성전에서 시작된 개혁이 남유다 전역으로 확산되는 흐름을 확인합니다.",
+      "keyItems": [
+        {
+          "icon": "👑",
+          "title": "요시야",
+          "text": "말씀 앞에 겸비한 개혁 왕입니다."
+        },
+        {
+          "icon": "📖",
+          "title": "율법책",
+          "text": "개혁의 출발점입니다."
+        },
+        {
+          "icon": "🏛️",
+          "title": "성전",
+          "text": "예배 회복의 중심입니다."
+        },
+        {
+          "icon": "🐑",
+          "title": "유월절",
+          "text": "언약 백성의 정체성을 회복합니다."
+        }
+      ],
+      "overviewFlow": [
+        {
+          "icon": "🔨",
+          "title": "성전 수리",
+          "text": "시작"
+        },
+        {
+          "icon": "📖",
+          "title": "책 발견",
+          "text": "율법"
+        },
+        {
+          "icon": "😭",
+          "title": "회개",
+          "text": "옷을 찢음"
+        },
+        {
+          "icon": "🔥",
+          "title": "개혁",
+          "text": "우상 제거"
+        }
+      ],
+      "timeline": [
+        {
+          "year": "BC701",
+          "label": "앗수르 위기"
+        },
+        {
+          "year": "BC640",
+          "label": "요시야 즉위"
+        },
+        {
+          "year": "BC622",
+          "label": "요시야 개혁",
+          "active": true
+        },
+        {
+          "year": "BC586",
+          "label": "예루살렘 함락"
+        }
+      ],
+      "links": [
+        {
+          "label": "히스기야 위기",
+          "hub": "hezekiah-assyria"
+        },
+        {
+          "label": "예루살렘 함락",
+          "hub": "jerusalem-fall"
+        },
+        {
+          "label": "성경연대기",
+          "url": "https://centiger.github.io/cen-bible-chrololgy/?view=timeline"
+        },
+        {
+          "label": "Matrix",
+          "url": "../index.html"
+        }
+      ],
+      "prev": "hezekiah-assyria",
+      "next": "jerusalem-fall",
+      "prevLabel": "히스기야 위기",
+      "nextLabel": "예루살렘 함락"
+    },
+    {
+      "slug": "jerusalem-fall",
+      "title": "예루살렘 함락",
+      "year": "BC586",
+      "short": "성전 파괴와 포로",
+      "kicker": "허브 05 · 예루살렘 함락",
+      "heroTitle": "성전이 무너지고 백성이 끌려가다",
+      "heroText": "바벨론 왕 느부갓네살이 예루살렘을 함락시키고 성전을 파괴합니다. 분열왕국 시대는 끝나고 포로기 세계가 시작됩니다.",
+      "tags": [
+        "열왕기하 25장",
+        "예레미야 39장",
+        "성전 파괴",
+        "바벨론 포로"
+      ],
+      "mainFlowTitle": "붕괴의 흐름",
+      "mainFlow": [
+        {
+          "icon": "⚠️",
+          "title": "경고 거절",
+          "text": "예레미야"
+        },
+        {
+          "icon": "⚔️",
+          "title": "바벨론 침공",
+          "text": "느부갓네살"
+        },
+        {
+          "icon": "🔥",
+          "title": "성전 파괴",
+          "text": "BC586"
+        },
+        {
+          "icon": "⛓️",
+          "title": "포로",
+          "text": "바벨론"
+        }
+      ],
+      "map": "assets/maps/jerusalem-fall-map.png",
+      "mapTitle": "예루살렘 함락 지도",
+      "mapCaption": "바벨론 침공, 예루살렘 함락, 성전 파괴와 포로 이동의 흐름을 확인합니다.",
+      "keyItems": [
+        {
+          "icon": "⚔️",
+          "title": "느부갓네살",
+          "text": "예루살렘을 함락시킨 바벨론 왕입니다."
+        },
+        {
+          "icon": "👑",
+          "title": "시드기야",
+          "text": "남유다 마지막 왕입니다."
+        },
+        {
+          "icon": "😭",
+          "title": "예레미야",
+          "text": "멸망을 눈물로 경고한 선지자입니다."
+        },
+        {
+          "icon": "🏛️",
+          "title": "성전 파괴",
+          "text": "분열왕국 시대 종말의 상징입니다."
+        }
+      ],
+      "overviewFlow": [
+        {
+          "icon": "🏚️",
+          "title": "성벽 붕괴",
+          "text": "예루살렘"
+        },
+        {
+          "icon": "🔥",
+          "title": "성전 파괴",
+          "text": "임재 상실"
+        },
+        {
+          "icon": "⛓️",
+          "title": "포로",
+          "text": "바벨론"
+        },
+        {
+          "icon": "🌱",
+          "title": "남은 희망",
+          "text": "회복의 씨앗"
+        }
+      ],
+      "timeline": [
+        {
+          "year": "BC622",
+          "label": "요시야 개혁"
+        },
+        {
+          "year": "BC605",
+          "label": "1차 포로"
+        },
+        {
+          "year": "BC586",
+          "label": "예루살렘 함락",
+          "active": true
+        },
+        {
+          "year": "BC538",
+          "label": "귀환 칙령"
+        }
+      ],
+      "links": [
+        {
+          "label": "요시야 개혁",
+          "hub": "josiah-reform"
+        },
+        {
+          "label": "바벨론 포로 세계",
+          "url": "https://centiger.github.io/CEN-Return-Matrix/"
+        },
+        {
+          "label": "성경연대기",
+          "url": "https://centiger.github.io/cen-bible-chrololgy/?view=timeline"
+        },
+        {
+          "label": "Matrix",
+          "url": "../index.html"
+        },
+        {
+          "label": "포로귀환 Matrix",
+          "url": "https://centiger.github.io/CEN-Return-Matrix/"
+        }
+      ],
+      "prev": "josiah-reform",
+      "prevLabel": "요시야 개혁",
+      "nextLabel": "포로귀환 Matrix로 이동",
+      "nextUrl": "https://centiger.github.io/CEN-Return-Matrix/",
+      "next": null
+    }
+  ]
+}
