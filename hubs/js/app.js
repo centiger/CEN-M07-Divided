@@ -4,7 +4,7 @@ const $=id=>document.getElementById(id);
 const params=new URLSearchParams(location.search);
 
 async function loadData(){
-  const res=await fetch('data/hubs.json?v=galmel-standard-2',{cache:'no-store'});
+  const res=await fetch('data/hubs.json?v=hezekiah-standard-1',{cache:'no-store'});
   const data=await res.json();
   HUBS=data.hubs||[];
   const slug=params.get('hub')||data.defaultHub||(HUBS[0]&&HUBS[0].slug);
@@ -106,5 +106,5 @@ $('backBtn').onclick=()=>openUrl('../index.html');
 $('hubListBtn').onclick=()=>$('drawer').classList.add('show');
 $('drawerClose').onclick=()=>$('drawer').classList.remove('show');
 $('drawer').onclick=e=>{if(e.target.id==='drawer')$('drawer').classList.remove('show')};
-if('serviceWorker'in navigator)navigator.serviceWorker.register('./sw.js?v=galmel-standard-2').catch(()=>{});
+if('serviceWorker'in navigator)navigator.serviceWorker.register('./sw.js?v=hezekiah-standard-1').catch(()=>{});
 loadData();
