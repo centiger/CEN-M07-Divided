@@ -4,7 +4,7 @@ const $=id=>document.getElementById(id);
 const params=new URLSearchParams(location.search);
 
 async function loadData(){
-  const res=await fetch('data/hubs.json?v=hezekiah-standard-1',{cache:'no-store'});
+  const res=await fetch('data/hubs.json?v=hezekiah-standard-2',{cache:'no-store'});
   const data=await res.json();
   HUBS=data.hubs||[];
   const slug=params.get('hub')||data.defaultHub||(HUBS[0]&&HUBS[0].slug);
