@@ -1,8 +1,97 @@
-<!DOCTYPE html><html lang="ko"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0,viewport-fit=cover"><title>CEN 분열왕국 5허브</title><link rel="manifest" href="manifest.json"><meta name="theme-color" content="#17304a"><link rel="stylesheet" href="css/style.css"></head><body><header class="topbar"><button class="back" id="backBtn">←</button><div class="titlebox"><b id="appTitle">CEN Hub</b><span id="appSub">분열왕국 핵심사건 확장탐험</span></div><button class="menu" id="hubListBtn">허브</button></header><main class="wrap"><section class="hero" id="hero"></section><section class="section"><h2 id="flowTitle">핵심 흐름</h2><div class="card flow" id="mainFlow"></div></section><section class="section"><h2 id="mapTitle">지도</h2><div class="card mapCard"><img id="mapImg" alt="허브 지도"><p id="mapCaption"></p></div></section><section class="section"><h2>핵심 요소</h2><div class="infoGrid" id="keyItems"></div></section><section class="section"><h2>전체 흐름 한눈에 보기</h2><div class="card flow" id="overviewFlow"></div></section>
-<section class="section"><h2>대표성구</h2><div class="card" id="verse"></div></section>
-<section class="section"><h2>핵심사건</h2><div class="card" id="events"></div></section>
-<section class="section"><h2>핵심의미</h2><div class="card" id="meaning"></div></section>
-<section class="section"><h2>통합탐험</h2><div class="card" id="integration"></div></section>
-<section class="section"><h2>관련성경</h2><div class="card" id="bible"></div></section>
-<section class="section"><h2>핵심메시지</h2><div class="card" id="message"></div></section>
-<section class="section"><h2>성경연대기 위치</h2><div class="card timeline" id="timeline"></div></section><section class="section"><h2>연결탐험</h2><div class="links" id="links"></div></section></main><nav class="bottom"><button id="prevBtn">이전 허브</button><button id="matrixBtn">Matrix</button><button id="nextBtn">다음 허브</button></nav><div class="drawer" id="drawer"><div class="drawerPanel"><div class="drawerHead"><b>허브 목록</b><button id="drawerClose">×</button></div><div id="hubList"></div></div></div><script src="js/app.js"></script></body></html>
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0,viewport-fit=cover">
+  <title>CEN 분열왕국 5허브</title>
+  <link rel="manifest" href="manifest.json">
+  <meta name="theme-color" content="#17304a">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <header class="topbar">
+    <button class="back" id="backBtn">←</button>
+    <div class="titlebox">
+      <b id="appTitle">CEN Hub</b>
+      <span id="appSub">분열왕국 핵심사건 확장탐험</span>
+    </div>
+    <button class="menu" id="hubListBtn">허브</button>
+  </header>
+
+  <main class="wrap">
+    <section class="hero" id="hero"></section>
+
+    <section class="section" id="mainFlowSection">
+      <h2 id="flowTitle">핵심 흐름</h2>
+      <div class="card flow" id="mainFlow"></div>
+    </section>
+
+    <section class="section" id="mapSection">
+      <h2 id="mapTitle">지도</h2>
+      <div class="card mapCard">
+        <img id="mapImg" alt="허브 지도">
+        <p id="mapCaption"></p>
+      </div>
+    </section>
+
+    <section class="section optional" id="verseSection">
+      <h2>대표성구</h2>
+      <div class="card verseCard" id="verse"></div>
+    </section>
+
+    <section class="section" id="keyItemsSection">
+      <h2>핵심 요소</h2>
+      <div class="infoGrid" id="keyItems"></div>
+    </section>
+
+    <section class="section" id="overviewFlowSection">
+      <h2>전체 흐름 한눈에 보기</h2>
+      <div class="card flow" id="overviewFlow"></div>
+    </section>
+
+    <section class="section optional" id="eventsSection">
+      <h2>핵심사건</h2>
+      <div class="card proseCard" id="events"></div>
+    </section>
+
+    <section class="section optional" id="meaningSection">
+      <h2>핵심의미</h2>
+      <div class="card proseCard" id="meaning"></div>
+    </section>
+
+    <section class="section" id="linksSection">
+      <h2>연결탐험</h2>
+      <div class="links" id="links"></div>
+    </section>
+
+    <section class="section optional" id="integrationSection">
+      <h2>통합탐험</h2>
+      <div class="card proseCard" id="integration"></div>
+    </section>
+
+    <section class="section optional" id="bibleSection">
+      <h2>관련성경</h2>
+      <div class="card bibleCard" id="bible"></div>
+    </section>
+
+    <section class="section optional" id="messageSection">
+      <h2>핵심메시지</h2>
+      <div class="card messageCard" id="message"></div>
+    </section>
+  </main>
+
+  <nav class="bottom">
+    <button id="prevBtn">이전 허브</button>
+    <button id="matrixBtn">Matrix</button>
+    <button id="nextBtn">다음 허브</button>
+  </nav>
+
+  <div class="drawer" id="drawer">
+    <div class="drawerPanel">
+      <div class="drawerHead"><b>허브 목록</b><button id="drawerClose">×</button></div>
+      <div id="hubList"></div>
+    </div>
+  </div>
+  <script src="js/app.js?v=galmel-standard-2"></script>
+</body>
+</html>
