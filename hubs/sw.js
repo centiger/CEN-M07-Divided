@@ -1,1 +1,1 @@
-const CACHE='cen-divided-galmel-standard-v1';self.addEventListener('install',e=>self.skipWaiting());self.addEventListener('activate',e=>self.clients.claim());
+const CACHE='cen-divided-hubs-review-20260610';self.addEventListener('install',e=>self.skipWaiting());self.addEventListener('activate',e=>self.clients.claim());
