@@ -1,11 +1,10 @@
 {
-  "name": "CEN 분열왕국 5허브 엔진",
-  "short_name": "CEN 5Hub",
+  "name": "CEN Matrix 포로귀환",
+  "short_name": "포로귀환 Matrix",
   "start_url": "./index.html",
-  "scope": "./",
   "display": "standalone",
-  "background_color": "#f2ead7",
-  "theme_color": "#17304a",
+  "background_color": "#f4fbf8",
+  "theme_color": "#236B63",
   "icons": [
     {
       "src": "icons/icon-192.png",
