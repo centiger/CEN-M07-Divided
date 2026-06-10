@@ -354,9 +354,19 @@
           "text": "예루살렘"
         },
         {
-          "icon": "🕊️",
+          "icon": "🙏",
+          "title": "기도",
+          "text": "히스기야"
+        },
+        {
+          "icon": "📜",
+          "title": "예언",
+          "text": "이사야"
+        },
+        {
+          "icon": "✨",
           "title": "구원",
-          "text": "하나님"
+          "text": "여호와"
         }
       ],
       "timeline": [
@@ -468,13 +478,13 @@
       "overviewFlow": [
         {
           "icon": "🔨",
-          "title": "성전 수리",
+          "title": "성전수리",
           "text": "시작"
         },
         {
           "icon": "📖",
-          "title": "책 발견",
-          "text": "율법"
+          "title": "율법책",
+          "text": "발견"
         },
         {
           "icon": "😭",
@@ -482,9 +492,19 @@
           "text": "옷을 찢음"
         },
         {
-          "icon": "🔥",
-          "title": "개혁",
-          "text": "우상 제거"
+          "icon": "🗿",
+          "title": "우상제거",
+          "text": "개혁"
+        },
+        {
+          "icon": "🐑",
+          "title": "유월절",
+          "text": "회복"
+        },
+        {
+          "icon": "👥",
+          "title": "확산",
+          "text": "전국"
         }
       ],
       "timeline": [
