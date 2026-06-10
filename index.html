@@ -3,34 +3,734 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-<title>포로귀환 Matrix</title>
+<title>CEN Bible 분열왕국 Matrix</title>
 <link rel="manifest" href="manifest.json">
-<meta name="theme-color" content="#236B63">
+<meta name="theme-color" content="#132235">
 <style>
-*{box-sizing:border-box}html,body{margin:0;padding:0;width:100%;height:100%;overflow:hidden;font-family:system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;background:#f4fbf8;color:#10201d}.header{height:72px;background:linear-gradient(135deg,#164f49,#236B63)!important;color:#fff;padding:7px 10px 5px;box-shadow:0 2px 10px rgba(0,0,0,.16)}.headerTop{height:38px;display:flex;align-items:center;gap:10px}.menuBtn{width:36px;height:36px;border-radius:12px;border:1px solid rgba(255,255,255,.35);background:rgba(255,255,255,.08);color:#fff;font-size:20px}.brand{flex:1;min-width:0}.brand b{display:block;font-size:20px;font-weight:900;line-height:1}.brand span{display:block;font-size:10px;color:#d8fff8;margin-top:4px}.period{border:1px solid rgba(255,255,255,.45);border-radius:999px;padding:6px 10px;font-size:11px;color:#e8fff9;white-space:nowrap}.headerBottom{height:20px;display:flex;justify-content:space-between;align-items:center;font-size:12px;font-weight:900}.headerBottom span:last-child{font-weight:600;color:#d7f2ec}.tabs{height:40px;display:flex;gap:7px;align-items:center;overflow-x:auto;padding:5px 10px;background:#e9f6f3!important;border-bottom:1px solid #b8d7d1!important}.tab{flex:0 0 auto;padding:6px 13px;border-radius:999px;border:1px solid #9fc7c0;background:#fbfffd;font-size:12px;font-weight:900;color:#122e2a;box-shadow:0 1px 3px rgba(20,80,70,.06);cursor:pointer}.tab.active{background:#236B63!important;color:#fff!important;border-color:#236B63!important}.main{height:calc(100% - 72px - 40px - 46px);overflow:auto;background:#fbfffd!important}.matrix{min-width:1680px!important;display:grid;grid-template-columns:76px 1fr!important;background:#fbfffd!important}.left{position:sticky;left:0;z-index:20;display:flex;align-items:center;justify-content:center;text-align:center;font-weight:900;border-right:none!important;border-bottom:1px solid #bddbd5!important;white-space:normal!important;word-break:keep-all!important;overflow:hidden!important}.axisLeft{height:44px;font-size:13px;background:#dff5ef!important;position:sticky;top:0;z-index:40;width:76px!important;min-width:76px!important;max-width:76px!important;color:#123a35!important}.axis{position:sticky;top:0;z-index:30;height:44px;background:#fbfffd!important;border-bottom:1px solid #bddbd5;box-shadow:0 1px 4px rgba(0,0,0,.07);overflow:visible!important}.tick{position:absolute;top:10px;transform:translateX(-50%);font-size:14px!important;font-weight:900;color:#111;white-space:nowrap!important;letter-spacing:-.3px}.tick.red{color:#0b7b6b}.tick:after{content:"";position:absolute;left:50%;top:22px;width:1px;height:8px;background:#aacdc6!important}.grid{position:absolute;top:0;bottom:0;border-left:1px dashed #d4e9e4!important}.left.rowLabel{width:76px!important;min-width:76px!important;max-width:76px!important;font-size:11.5px!important;line-height:1.08!important;padding:1px!important;color:#16332f!important}.labelReturn{background:#dff7f1!important}.labelTemple{background:#ecf7e6!important}.labelPreserve{background:#fff3d8!important}.labelLaw{background:#eee8ff!important}.labelWall{background:#e8f1ff!important}.labelNations{background:#f3e2cd!important}.labelEvents{background:#d9f4ee!important}.plot{position:relative;overflow:visible!important;border-bottom:1px solid #bddbd5!important;background:#fbfffd!important}.bar{position:absolute;height:18px;line-height:18px;border-radius:2px!important;padding:0 5px;font-size:10.3px!important;font-weight:900;color:#111;border:1px solid rgba(0,0,0,.14);white-space:nowrap;overflow:hidden;text-align:center;box-shadow:0 1px 2px rgba(0,0,0,.05);cursor:pointer;z-index:2}.returnBar{background:#d6f5ee!important;border-color:#76beb1!important}.templeBar{background:#e5f2dc!important;border-color:#9dcc88!important}.preserveBar{background:#fff0c6!important;border-color:#e9b84e!important}.lawBar{background:#eee4ff!important;border-color:#b99de8!important}.wallBar{background:#e2eeff!important;border-color:#95b8e8!important}.nationBar{background:#f4dec0!important;border-color:#d59a55!important;text-align:left;overflow:hidden!important}.scroll-label{display:inline-block;font-weight:900;color:#2b1f15;white-space:nowrap;will-change:transform;padding-left:2px}.dot{position:absolute;width:9px!important;height:9px!important;border-radius:50%;background:#178c7d!important;transform:translateX(-50%);box-shadow:0 0 0 2px rgba(23,140,125,.12);cursor:pointer}.dot[data-hub]{width:12px!important;height:12px!important;background:#236B63!important;box-shadow:0 0 0 3px rgba(35,107,99,.16),0 0 0 6px rgba(35,107,99,.06)!important}.dot[data-hub]::after{content:"↗";position:absolute;left:50%;top:-18px;transform:translateX(-50%);font-size:10px;font-weight:900;color:#236B63}.eventText{position:absolute;width:78px;transform:translateX(-50%);text-align:center;font-size:9.8px!important;font-weight:900;line-height:1.12;color:#16332f!important;pointer-events:none!important}.eventText.hasHub{pointer-events:auto!important}.hubExploreBtn{display:inline-block;margin-top:3px;padding:2px 5px;border-radius:999px;background:#236B63;color:#fff;border:1px solid #57BFB6;font-size:8.5px;font-weight:900;line-height:1.1;box-shadow:0 1px 3px rgba(20,80,70,.18);cursor:pointer;white-space:nowrap}.actions{height:46px;display:flex;gap:7px;overflow-x:auto;align-items:center;padding:5px 10px;background:#e9f6f3!important;border-top:1px solid #b8d7d1!important}.action{flex:0 0 auto;padding:7px 15px;border-radius:12px;border:1px solid #9fc7c0;background:#fbfffd!important;font-size:12px;font-weight:900;box-shadow:0 1px 3px rgba(20,80,70,.06);white-space:nowrap}.hidden{display:none!important}.modal{position:fixed;inset:0;background:rgba(0,0,0,.38);z-index:100;display:none;align-items:center;justify-content:center;padding:16px}.modal.show{display:flex}.card{width:min(430px,100%);background:#fbfffd;border:1px solid #9fc7c0;border-radius:16px;padding:15px}.cardTitle{font-size:18px;font-weight:900;margin-bottom:7px;color:#123a35}.cardBody{font-size:13px;line-height:1.55;white-space:pre-line;color:#28433f}.close{width:100%;margin-top:12px;border:0;background:#236B63;color:white;border-radius:11px;padding:10px;font-weight:900;cursor:pointer}.cen-enhance-panel{max-width:760px;margin:14px auto;padding:0 10px}.cen-layer-card{background:linear-gradient(135deg,#f4fffb,#dff5ef);border:1px solid #9fc7c0;border-radius:18px;padding:12px;margin:12px 0;box-shadow:0 4px 14px rgba(20,80,70,.08)}.cen-layer-title{font-size:15px;font-weight:900;color:#123a35;border-left:6px solid #236B63;padding-left:8px;margin-bottom:10px}.cen-flow{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:8px}.cen-node{min-height:70px;background:#fbfffd;border:1px solid #b6d9d2;border-radius:14px;padding:9px 7px;text-align:center}.cen-node b{display:block;font-size:12px;color:#123a35}.cen-node span{display:block;font-size:10px;color:#49645f;margin-top:4px;line-height:1.35}.cen-node.dark{background:linear-gradient(135deg,#236B63,#164f49);border-color:#57BFB6}.cen-node.dark b,.cen-node.dark span{color:#fff}.cen-warning-strip{background:linear-gradient(90deg,#164f49,#236B63);color:#fff;border-radius:16px;padding:12px;font-size:12px;line-height:1.5;font-weight:800;text-align:center;border:1px solid rgba(255,255,255,.25)}@media(max-width:430px){.cen-flow{grid-template-columns:repeat(2,minmax(0,1fr))}.matrix{grid-template-columns:72px 1fr!important}.rowLabel,.axisLeft{width:72px!important;min-width:72px!important;max-width:72px!important}}
+*{box-sizing:border-box}
+html,body{
+  margin:0;padding:0;width:100%;height:100%;
+  overflow:hidden;
+  font-family:system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+  background:#f6efe4;color:#17130f;
+}
+.header{
+  height:72px;background:linear-gradient(135deg,#102033,#1d3651) !important;
+  color:#fff;padding:7px 10px 5px;
+  box-shadow:0 2px 10px rgba(0,0,0,.16);
+}
+.headerTop{height:38px;display:flex;align-items:center;gap:10px}
+.menuBtn{
+  width:36px;height:36px;border-radius:12px;
+  border:1px solid rgba(255,255,255,.35);
+  background:rgba(255,255,255,.08);color:#fff;font-size:20px;
+}
+.brand{flex:1;min-width:0}
+.brand b{display:block;font-size:20px;font-weight:900;line-height:1}
+.brand span{display:block;font-size:10px;color:#e8d7c4;margin-top:4px}
+.period{
+  border:1px solid rgba(255,255,255,.4);
+  border-radius:999px;padding:6px 10px;
+  font-size:11px;color:#ffe9b7;white-space:nowrap;
+}
+.headerBottom{
+  height:20px;display:flex;justify-content:space-between;align-items:center;
+  font-size:12px;font-weight:900;
+}
+.headerBottom span:last-child{font-weight:600;color:#eadbc9}
+
+/* 상단 탭 스타일 */
+.tabs{
+  height:40px;display:flex;gap:7px;align-items:center;overflow-x:auto;
+  padding:5px 10px;background:#f6eddf !important;border-bottom:1px solid #d5bea0 !important;
+}
+.tab{
+  flex:0 0 auto;padding:6px 13px;border-radius:999px;
+  border:1px solid #c4ab87;background:#fffaf2;
+  font-size:12px;font-weight:900;color:#1e150f;
+  box-shadow:0 1px 3px rgba(60,35,15,.06);
+  cursor:pointer;
+  transition: all 0.2s;
+}
+.tab.active{background:#70451f !important;color:#fff !important;border-color:#70451f !important;}
+
+.main{
+  height:calc(100% - 72px - 40px - 46px);
+  overflow:auto;background:#fffaf2 !important;
+}
+.matrix{
+  min-width:1680px !important;
+  display:grid;
+  grid-template-columns:76px 1fr !important;
+  background:#fffdf8 !important;
+}
+.left{
+  position:sticky;left:0;z-index:20;
+  display:flex;align-items:center;justify-content:center;text-align:center;
+  font-weight:900;border-right:none !important;border-bottom:1px solid #dfc9aa !important;
+  white-space:normal !important;
+  word-break:keep-all !important;
+  overflow:hidden !important;
+}
+.axisLeft{
+  height:44px;font-size:13px;background:#fff0d8 !important;
+  position:sticky;top:0;z-index:40;
+  width:76px !important;min-width:76px !important;max-width:76px !important;
+  color:#3a2412 !important;
+}
+.axis{
+  position:sticky;top:0;z-index:30;
+  height:44px;background:#fffaf2 !important;border-bottom:1px solid #d8c3a2;
+  box-shadow:0 1px 4px rgba(0,0,0,.07);
+  overflow:visible !important;
+}
+.tick{
+  position:absolute;top:10px;transform:translateX(-50%);
+  font-size:14px !important;font-weight:900;color:#111;white-space:nowrap !important;
+  letter-spacing:-.3px;
+}
+.tick.red{color:#b51313}
+.tick:after{
+  content:"";position:absolute;left:50%;top:22px;width:1px;height:8px;background:#c2ad93 !important;
+}
+.grid{
+  position:absolute;top:0;bottom:0;border-left:1px dashed #ead9bf !important;
+}
+.left.rowLabel{
+  width:76px !important;min-width:76px !important;max-width:76px !important;
+  font-size:11.5px !important;line-height:1.08 !important;padding:1px !important;
+  color:#2b2118 !important;
+}
+.left.rowLabel br { display:block !important; }
+
+.labelNorth{background:#e7f3ff !important;}
+.labelSouth{background:#ecf7e6 !important;}
+.labelProphets{background:#f2ebff !important;}
+.labelNations{background:#fff0d8 !important;}
+.labelEvents{background:#ffece8 !important;}
+
+/* 행 플롯 영역 */
+.plot{
+  position:relative;overflow:visible !important;border-bottom:1px solid #dfc9aa !important;background:#fffdf8 !important;
+}
+.bar{
+  position:absolute;height:18px;line-height:18px;border-radius:2px !important;
+  padding:0 5px;font-size:10.3px !important;font-weight:900;color:#111;
+  border:1px solid rgba(0,0,0,.14);white-space:nowrap;overflow:hidden;
+  text-align:center;box-shadow:0 1px 2px rgba(0,0,0,.05);
+  cursor:pointer;
+  z-index:2;
+}
+.northBar{background:#dfefff !important;border-color:#9ec4ec !important;}
+.southBar{background:#e3f2dc !important;border-color:#9dcc88 !important;}
+.prophetBar{background:#eee4ff !important;border-color:#b99de8 !important;}
+.nationBar{background:#ffe8c6 !important;border-color:#efa64c !important;text-align:left;overflow:hidden !important;}
+
+/* 왕들의 위/아래 교차 배치 지시선 레이아웃 */
+.bar.pin-top, .bar.pin-bottom {
+  overflow:visible !important;
+  text-indent: -9999px;
+}
+.bar.pin-top::after {
+  content: attr(data-display-name);
+  position: absolute;
+  bottom: 24px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: #332214;
+  color: #fff;
+  font-size: 9.5px;
+  padding: 1px 5px;
+  border-radius: 4px;
+  text-indent: 0;
+  white-space: nowrap;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+  z-index: 10;
+}
+.bar.pin-top::before {
+  content: "";
+  position: absolute;
+  bottom: 18px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 1px;
+  height: 7px;
+  background: #70451f;
+  z-index: 9;
+}
+.bar.pin-bottom::after {
+  content: attr(data-display-name);
+  position: absolute;
+  top: 24px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: #332214;
+  color: #fff;
+  font-size: 9.5px;
+  padding: 1px 5px;
+  border-radius: 4px;
+  text-indent: 0;
+  white-space: nowrap;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+  z-index: 10;
+}
+.bar.pin-bottom::before {
+  content: "";
+  position: absolute;
+  top: 18px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 1px;
+  height: 7px;
+  background: #70451f;
+  z-index: 9;
+}
+.bar.pin-top.south-pin::after, .bar.pin-bottom.south-pin::after {
+  background: #253a1c;
+}
+
+/* 스마트 스크롤 동적 동기화 텍스트 레이블 스타일 */
+.scroll-label {
+  display: inline-block;
+  font-weight: 900;
+  color: #2b1f15;
+  white-space: nowrap;
+  will-change: transform;
+  padding-left: 2px;
+}
+
+.dot{
+  position:absolute;width:9px !important;height:9px !important;border-radius:50%;
+  background:#cf2424 !important;transform:translateX(-50%);
+  box-shadow:0 0 0 2px rgba(207,36,36,.12);
+  cursor:pointer;
+}
+.eventText{
+  position:absolute;width:72px;transform:translateX(-50%);
+  text-align:center;font-size:9.8px !important;font-weight:900;line-height:1.12;
+  color:#2d2116 !important;
+}
+
+/* 하단 와이드 액션바 구조 */
+.actions{
+  height:46px;display:flex;gap:7px;overflow-x:auto;align-items:center;
+  padding:5px 10px;background:#f6eddf !important;border-top:1px solid #d5bea0 !important;
+}
+.action{
+  flex:0 0 auto;padding:7px 15px;border-radius:12px;
+  border:1px solid #c4ab87;background:#fffaf2 !important;font-size:12px;font-weight:900;
+  box-shadow:0 1px 3px rgba(60,35,15,.06);
+  white-space:nowrap;
+}
+
+.hidden{display:none!important}
+
+/* 모달 */
+.modal{
+  position:fixed;inset:0;background:rgba(0,0,0,.38);z-index:100;
+  display:none;align-items:center;justify-content:center;padding:16px;
+}
+.modal.show{display:flex}
+.card{
+  width:min(430px,100%);background:#fffaf2;border:1px solid #d1b58a;
+  border-radius:16px;padding:15px;
+}
+.cardTitle{font-size:18px;font-weight:900;margin-bottom:7px;color:#3c2512}
+.cardBody{font-size:13px;line-height:1.55;white-space:pre-line;color:#4b3828}
+.close{
+  width:100%;margin-top:12px;border:0;background:#70451f;color:white;
+  border-radius:11px;padding:10px;font-weight:900;cursor:pointer;
+}
+/* 핵심 사건 허브목록 팝업 */
+.hubListModal{display:grid;gap:8px;margin-top:6px}
+.hubListModal button{width:100%;border:1px solid #c4ab87;background:#fff8e8;border-radius:13px;padding:11px 12px;text-align:left;font-weight:900;color:#17304a;box-shadow:0 1px 3px rgba(60,35,15,.06);}
+.hubListModal button span{display:block;margin-top:3px;font-size:11px;color:#6d5b40;font-weight:800}
+
+
+@media(max-width:420px){
+  .matrix{grid-template-columns:72px 1fr !important;}
+  .rowLabel{font-size:11px !important;}
+  .axisLeft{font-size:12.5px !important;width:72px !important;min-width:72px !important;max-width:72px !important;}
+}
+
+/* north kingdom chronology fix: all north kings stop at BC 722 */
+.plot.view.northKings .bar{font-size:9.4px !important;padding:0 3px !important;}
+
+
+/* chronology correction: synced prophet activity dates with BC930~586 axis */
+.labelNorth{background:#cfe4fb !important;}
+.labelSouth{background:#d8edcf !important;}
+.labelProphets{background:#e3d6fb !important;}
+.labelNations{background:#f3ddb6 !important;}
+.labelEvents{background:#ffd8d0 !important;}
+.plot.view.prophets .bar{font-size:9.8px !important;}
+
+
+/* hub link markers */
+.dot[data-hub]{
+  width:12px !important;
+  height:12px !important;
+  background:#8f2b22 !important;
+  box-shadow:0 0 0 3px rgba(143,43,34,.16), 0 0 0 6px rgba(143,43,34,.06) !important;
+}
+.dot[data-hub]::after{
+  content:"↗";
+  position:absolute;
+  left:50%;
+  top:-18px;
+  transform:translateX(-50%);
+  font-size:10px;
+  font-weight:900;
+  color:#70451f;
+}
+
+
+/* BC586 label position fix */
+.eventText.finalEvent{
+  text-align:right !important;
+  width:86px !important;
+  transform:translateX(-86%) !important;
+}
+
+
+/* BC586 event label final fix: keep text close to dot */
+.eventText586{
+  width:76px !important;
+  transform:translateX(-58%) !important;
+  text-align:center !important;
+  font-size:9.8px !important;
+  line-height:1.12 !important;
+  z-index:6 !important;
+}
+
+
+.eventText.finalEvent{
+  transform:translateX(-58%) !important;
+  text-align:center !important;
+}
+
+
+/* matrix review fixes: chronological accuracy and footer hub navigation */
+.plot.view.southKings .bar{font-size:9.2px !important;padding:0 3px !important;}
+.plot.view.southKings .bar.pin-top::after,.plot.view.southKings .bar.pin-bottom::after{font-size:9px !important;}
+.action{cursor:pointer;}
+.menuBtn{cursor:pointer;}
+
 </style>
+
+<style id="cen-divided-matrix-enhance-v1">
+.cen-enhance-panel{max-width:760px;margin:14px auto;padding:0 10px;font-family:system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}
+.cen-layer-card{background:linear-gradient(135deg,#fff8e8,#efe2c3);border:1px solid #cdb58b;border-radius:18px;padding:12px;margin:12px 0;box-shadow:0 4px 14px rgba(60,40,15,.08)}
+.cen-layer-title{font-size:15px;font-weight:900;color:#17304a;border-left:6px solid #7b4b2c;padding-left:8px;margin-bottom:10px}
+.cen-empire-flow{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px}
+.cen-prophet-flow{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:8px}
+.cen-collapse-flow{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}
+.cen-node{min-height:70px;background:#fffaf0;border:1px solid #d2bd96;border-radius:14px;padding:9px 7px;text-align:center}
+.cen-node b{display:block;font-size:12px;color:#16213a}
+.cen-node span{display:block;font-size:10px;color:#6a5639;margin-top:4px;line-height:1.35}
+.cen-node.dark{background:linear-gradient(135deg,#2b3448,#682b22);border-color:#9e6748}.cen-node.dark b,.cen-node.dark span{color:#fff6df}
+.cen-warning-strip{background:linear-gradient(90deg,#7b2f1c,#2b1a18);color:#fff6df;border-radius:16px;padding:12px;font-size:12px;line-height:1.5;font-weight:800;text-align:center;border:1px solid rgba(255,210,130,.35)}
+.cen-countdown{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:6px}
+.cen-count{background:#2f1e1b;color:#ffe3bd;border:1px solid #8b4a2a;border-radius:13px;padding:8px 4px;text-align:center;font-size:10px;font-weight:900}
+.cen-count small{display:block;margin-top:4px;color:#d8b999;font-size:9px}
+@media(max-width:430px){.cen-prophet-flow{grid-template-columns:repeat(2,minmax(0,1fr))}.cen-collapse-flow{grid-template-columns:1fr}.cen-countdown{grid-template-columns:repeat(2,minmax(0,1fr))}}
+</style>
+
+
+<style id="hub-click-area-fix">
+.eventText{
+  pointer-events:none !important;
+  cursor:default !important;
+}
+.dot[data-hub]{
+  cursor:pointer !important;
+}
+.plot.view.events{
+  cursor:default !important;
+}
+</style>
+
+
+<style id="hub-explore-button-style">
+.eventText.hasHub{
+  pointer-events:auto !important;
+  cursor:default !important;
+}
+.hubExploreBtn{
+  display:inline-block;
+  margin-top:3px;
+  padding:2px 5px;
+  border-radius:999px;
+  background:#70451f;
+  color:#fff8e8;
+  border:1px solid #a87942;
+  font-size:8.5px;
+  font-weight:900;
+  line-height:1.1;
+  box-shadow:0 1px 3px rgba(70,40,15,.18);
+  cursor:pointer;
+  white-space:nowrap;
+}
+.hubExploreBtn:active{
+  transform:scale(.96);
+}
+</style>
+
 </head>
 <body>
-<header class="header"><div class="headerTop"><button class="menuBtn">☰</button><div class="brand"><b>CEN‑Matrix</b><span>성경 시대별 총람</span></div><div class="period">BC 538 ~ BC 430</div></div><div class="headerBottom"><span>포로귀환 시대</span><span>귀환 · 성전 · 보존 · 율법 · 성벽</span></div></header>
-<nav class="tabs"><button class="tab active" data-view="all">전체</button><button class="tab active" data-view="return">귀환</button><button class="tab active" data-view="temple">성전</button><button class="tab active" data-view="preserve">보존</button><button class="tab active" data-view="law">율법</button><button class="tab active" data-view="wall">성벽</button><button class="tab active" data-view="nations">주변국</button><button class="tab active" data-view="events">사건</button></nav>
-<main class="main" id="mainScroll"><div class="matrix" id="matrix">
-<div class="left axisLeft">연대</div><div class="axis"><div class="tick red" style="left:4%">BC 538</div><div class="tick" style="left:5.67%">BC 536</div><div class="tick" style="left:19%">BC 520</div><div class="tick red" style="left:22.33%">BC 516</div><div class="tick" style="left:47.33%">BC 486</div><div class="tick" style="left:54%">BC 478</div><div class="tick red" style="left:70.67%">BC 458</div><div class="tick red" style="left:81.5%">BC 445</div><div class="tick" style="left:94%">BC 430</div></div>
-<div class="left rowLabel labelReturn view return">귀환<br>회복</div><div class="plot view return" style="height:82px"><div class="grid" style="left:4%"></div><div class="grid" style="left:5.67%"></div><div class="grid" style="left:19%"></div><div class="grid" style="left:22.33%"></div><div class="grid" style="left:47.33%"></div><div class="grid" style="left:54%"></div><div class="grid" style="left:70.67%"></div><div class="grid" style="left:81.5%"></div><div class="grid" style="left:94%"></div><div class="bar returnBar" data-title="고레스 칙령" data-info="연대: BC 538\n바벨론 포로 생활 이후 고레스가 유다 백성의 귀환과 성전 재건을 허락합니다.\n관련 성경: 스 1장, 대하 36장" style="left:4%;top:14px;width:2.1%">고레스 칙령</div><div class="bar returnBar" data-title="1차 귀환" data-info="연대: BC 538~536\n스룹바벨과 예수아를 중심으로 첫 귀환 공동체가 예루살렘으로 돌아옵니다." style="left:4.2%;top:40px;width:4.4%">1차 귀환 · 스룹바벨</div></div>
-<div class="left rowLabel labelTemple view temple">성전<br>예배</div><div class="plot view temple" style="height:104px"><div class="grid" style="left:4%"></div><div class="grid" style="left:5.67%"></div><div class="grid" style="left:19%"></div><div class="grid" style="left:22.33%"></div><div class="grid" style="left:47.33%"></div><div class="grid" style="left:54%"></div><div class="grid" style="left:70.67%"></div><div class="grid" style="left:81.5%"></div><div class="grid" style="left:94%"></div><div class="bar templeBar" data-title="성전 기초 놓음" data-info="연대: BC 536경\n귀환 공동체가 제단과 성전 기초를 세우며 예배 회복을 시작합니다." style="left:5.4%;top:12px;width:3.2%">성전 기초</div><div class="bar templeBar" data-title="성전 재건 중단" data-info="연대: 대략 BC 536~520\n주변 세력의 방해와 내부 침체로 성전 재건이 장기간 멈춥니다." style="left:6.8%;top:38px;width:12.2%">재건 중단</div><div class="bar templeBar" data-title="학개·스가랴의 격려" data-info="연대: BC 520경\n학개와 스가랴가 백성을 깨워 성전 재건을 다시 시작하게 합니다." style="left:19%;top:64px;width:3.5%">학개·스가랴</div><div class="bar templeBar" data-title="제2성전 완공" data-info="연대: BC 516\n포로귀환 공동체의 예배 중심이 다시 세워집니다.\n관련 성경: 스 6장" style="left:22.0%;top:12px;width:2.8%">제2성전 완공</div></div>
-<div class="left rowLabel labelPreserve view preserve">보존<br>섭리</div><div class="plot view preserve" style="height:82px"><div class="grid" style="left:4%"></div><div class="grid" style="left:47.33%"></div><div class="grid" style="left:54%"></div><div class="grid" style="left:70.67%"></div><div class="grid" style="left:81.5%"></div><div class="grid" style="left:94%"></div><div class="bar preserveBar" data-title="아하수에로 시대" data-info="연대: BC 486~465\n바사 제국의 넓은 통치 안에서 흩어진 유대인의 생존 문제가 드러납니다." style="left:47.33%;top:14px;width:17.5%">아하수에로</div><div class="bar preserveBar" data-title="에스더와 민족 보존" data-info="연대: BC 478경\n에스더와 모르드개를 통해 유대 민족 말살 위기가 뒤집히고 부림절이 제정됩니다.\n관련 성경: 에스더" style="left:53.4%;top:40px;width:5.2%">에스더 · 부림절</div></div>
-<div class="left rowLabel labelLaw view law">율법<br>말씀</div><div class="plot view law" style="height:82px"><div class="grid" style="left:4%"></div><div class="grid" style="left:70.67%"></div><div class="grid" style="left:81.5%"></div><div class="grid" style="left:94%"></div><div class="bar lawBar" data-title="에스라 귀환" data-info="연대: BC 458\n에스라가 율법 교사로 귀환하여 말씀 중심의 공동체 회복을 이끕니다.\n관련 성경: 스 7~10장" style="left:70.1%;top:14px;width:4.6%">에스라 귀환</div><div class="bar lawBar" data-title="율법 회복과 신앙개혁" data-info="연대: BC 458 이후\n율법 교육, 혼합주의 정리, 공동체 정체성 회복이 진행됩니다." style="left:72.3%;top:40px;width:12.5%">율법 회복 · 신앙개혁</div></div>
-<div class="left rowLabel labelWall view wall">성벽<br>공동체</div><div class="plot view wall" style="height:82px"><div class="grid" style="left:4%"></div><div class="grid" style="left:70.67%"></div><div class="grid" style="left:81.5%"></div><div class="grid" style="left:94%"></div><div class="bar wallBar" data-title="느헤미야 귀환" data-info="연대: BC 445\n느헤미야가 예루살렘 성벽 재건을 위해 귀환합니다." style="left:81.0%;top:14px;width:4.2%">느헤미야 귀환</div><div class="bar wallBar" data-title="성벽 재건" data-info="연대: BC 445\n52일 만에 성벽을 재건하며 예루살렘 공동체의 외적 질서를 회복합니다.\n관련 성경: 느 1~6장" style="left:81.5%;top:40px;width:3.8%">성벽 재건</div><div class="bar wallBar" data-title="공동체 정비와 언약 갱신" data-info="연대: BC 445~430경\n율법 낭독, 회개, 언약 갱신, 성전 질서 정비로 공동체 회복이 마무리됩니다." style="left:83.8%;top:62px;width:10.2%">공동체 정비</div></div>
-<div class="left rowLabel labelNations view nations">주변국<br>제국</div><div class="plot view nations" style="height:126px"><div class="grid" style="left:4%"></div><div class="grid" style="left:22.33%"></div><div class="grid" style="left:47.33%"></div><div class="grid" style="left:70.67%"></div><div class="grid" style="left:81.5%"></div><div class="grid" style="left:94%"></div><div class="bar nationBar" data-title="바사 제국" data-info="고레스부터 아닥사스다까지 포로귀환 시대 전체를 지배한 제국 배경입니다." style="left:1%;top:10px;width:97%"><span class="scroll-label">바사 제국</span></div><div class="bar nationBar" data-title="사마리아와 주변 민족" data-info="성전 재건과 성벽 재건을 방해하며 귀환 공동체와 갈등합니다." style="left:6%;top:38px;width:82%"><span class="scroll-label">사마리아 · 주변 민족</span></div><div class="bar nationBar" data-title="예루살렘" data-info="성전, 율법, 성벽 회복이 집중되는 포로귀환 시대의 중심 장소입니다." style="left:4%;top:66px;width:90%"><span class="scroll-label">예루살렘</span></div><div class="bar nationBar" data-title="수산 궁" data-info="에스더 사건의 배경이 되는 바사 제국 왕궁입니다." style="left:47%;top:94px;width:16%"><span class="scroll-label">수산 궁</span></div></div>
-<div class="left rowLabel labelEvents view events">핵심<br>사건</div><div class="plot view events" style="height:188px"><div class="grid" style="left:4%"></div><div class="grid" style="left:5.67%"></div><div class="grid" style="left:19%"></div><div class="grid" style="left:22.33%"></div><div class="grid" style="left:54%"></div><div class="grid" style="left:70.67%"></div><div class="grid" style="left:81.5%"></div><div class="grid" style="left:94%"></div>
-<div class="dot" data-title="고레스 칙령과 1차 귀환" data-info="BC 538\n포로귀환 시대의 출발점. 하나님은 이방 왕 고레스를 통해 귀환과 성전 재건의 문을 여십니다." style="left:4%;top:16px" data-hub="hubs/index.html?hub=return"></div><div class="eventText hasHub" style="left:4%;top:32px">BC538~536<br>귀환 허브<br><span class="hubExploreBtn" data-hub-url="hubs/index.html?hub=return">허브탐험</span></div>
-<div class="dot" data-title="성전 재건 완성" data-info="BC 516\n중단과 방해를 넘어 제2성전이 완공되어 예배 회복의 중심이 세워집니다." style="left:22.33%;top:76px" data-hub="hubs/index.html?hub=temple"></div><div class="eventText hasHub" style="left:22.33%;top:92px">BC536~516<br>성전 허브<br><span class="hubExploreBtn" data-hub-url="hubs/index.html?hub=temple">허브탐험</span></div>
-<div class="dot" data-title="에스더와 민족 보존" data-info="BC 478경\n흩어진 유대인들이 말살 위기에서 보존됩니다. 보이지 않는 하나님의 섭리가 두드러집니다." style="left:54%;top:16px" data-hub="hubs/index.html?hub=esther"></div><div class="eventText hasHub" style="left:54%;top:32px">BC478경<br>보존 허브<br><span class="hubExploreBtn" data-hub-url="hubs/index.html?hub=esther">허브탐험</span></div>
-<div class="dot" data-title="율법 허브" data-info="BC 458\n에스라가 귀환하여 말씀 중심의 신앙개혁을 이끕니다." style="left:70.67%;top:76px" data-hub="hubs/index.html?hub=ezra"></div><div class="eventText hasHub" style="left:70.67%;top:92px">BC458<br>율법 허브<br><span class="hubExploreBtn" data-hub-url="hubs/index.html?hub=ezra">허브탐험</span></div>
-<div class="dot" data-title="성벽 허브" data-info="BC 445\n느헤미야가 예루살렘 성벽을 재건하고 공동체 질서를 바로 세웁니다." style="left:81.5%;top:136px" data-hub="hubs/index.html?hub=nehemiah"></div><div class="eventText hasHub" style="left:81.5%;top:152px">BC445<br>성벽 허브<br><span class="hubExploreBtn" data-hub-url="hubs/index.html?hub=nehemiah">허브탐험</span></div>
-</div></div>
-<section class="cen-enhance-panel"><div class="cen-layer-card"><div class="cen-layer-title">포로귀환 5허브 흐름</div><div class="cen-flow"><div class="cen-node"><b>귀환</b><span>고레스 칙령<br>회복의 시작</span></div><div class="cen-node"><b>성전</b><span>제2성전 완공<br>예배 회복</span></div><div class="cen-node"><b>보존</b><span>에스더<br>민족 보존</span></div><div class="cen-node"><b>율법</b><span>에스라<br>말씀 회복</span></div><div class="cen-node dark"><b>성벽</b><span>느헤미야<br>공동체 완성</span></div></div></div><div class="cen-warning-strip">포로귀환 시대의 핵심은 단순한 귀향이 아닙니다. 성전, 말씀, 성벽을 통해 무너진 예배와 정체성과 공동체가 다시 세워지는 회복의 과정입니다.</div></section>
-</main><footer class="actions"><button class="action">성경연대기</button><button class="action">연결탐험</button><button class="action">한눈에 성경</button><button class="action">핵심 사건</button></footer>
-<div class="modal" id="modal"><div class="card"><div class="cardTitle" id="modalTitle"></div><div class="cardBody" id="modalBody"></div><button class="close" id="closeModal">닫기</button></div></div>
-<script>(function(){document.addEventListener('click',function(e){const hub=e.target.closest('.dot[data-hub]');if(!hub)return;e.preventDefault();e.stopPropagation();e.stopImmediatePropagation();const url=hub.dataset.hub;if(url)window.open(url,'_self')},true)})();const tabs=[...document.querySelectorAll('.tab')];const views=[...document.querySelectorAll('.view')];tabs.forEach(tab=>{tab.onclick=()=>{const targetView=tab.dataset.view;if(targetView==='all'){const isAllActive=tab.classList.contains('active');tabs.forEach(t=>{if(isAllActive)t.classList.remove('active');else t.classList.add('active')})}else{tab.classList.toggle('active');const nonAllTabs=tabs.filter(t=>t.dataset.view!=='all');const allActive=nonAllTabs.every(t=>t.classList.contains('active'));const allTab=document.querySelector('.tab[data-view="all"]');if(allActive)allTab.classList.add('active');else allTab.classList.remove('active')}const activeViews=tabs.filter(t=>t.classList.contains('active')&&t.dataset.view!=='all').map(t=>t.dataset.view);views.forEach(v=>{const match=activeViews.some(cl=>v.classList.contains(cl));v.classList.toggle('hidden',!match)});updateStickyLabels()}});const modal=document.getElementById('modal');const mt=document.getElementById('modalTitle');const mb=document.getElementById('modalBody');document.querySelectorAll('[data-title]').forEach(el=>{el.onclick=()=>{mt.textContent=el.dataset.title;mb.textContent=el.dataset.info||'준비중입니다.';modal.classList.add('show')}});document.getElementById('closeModal').onclick=()=>modal.classList.remove('show');modal.onclick=e=>{if(e.target===modal)modal.classList.remove('show')};const mainScroll=document.getElementById('mainScroll');function updateStickyLabels(){const scrollLeft=mainScroll.scrollLeft;document.querySelectorAll('.scroll-label').forEach(label=>{const bar=label.parentElement;if(!bar)return;const barLeft=bar.offsetLeft;const barWidth=bar.offsetWidth;const labelWidth=label.offsetWidth||80;let targetX=scrollLeft-barLeft+6;const maxX=barWidth-labelWidth-8;if(targetX<0)targetX=0;if(targetX>maxX)targetX=maxX;label.style.transform=`translateX(${targetX}px)`})}mainScroll.addEventListener('scroll',updateStickyLabels,{passive:true});window.addEventListener('resize',updateStickyLabels);setTimeout(updateStickyLabels,100);if('serviceWorker'in navigator){navigator.serviceWorker.register('./sw.js').catch(()=>{})}</script>
-<script>(function(){const footerLinks={'성경연대기':'https://centiger.github.io/cen-bible-chrololgy/?view=timeline','연결탐험':'https://centiger.github.io/cen-bible-chrololgy/#hub','한눈에 성경':'https://centiger.github.io/CEN-Bible2.0/#overview66','핵심 사건':'https://centiger.github.io/cen-bible-chrololgy/?view=timeline'};document.addEventListener('click',function(e){const btn=e.target.closest('footer.actions .action');if(!btn)return;const label=(btn.textContent||'').trim();const url=footerLinks[label];if(!url)return;e.preventDefault();e.stopPropagation();window.open(url,'_self')},true)})();(function(){document.addEventListener('click',function(e){const btn=e.target.closest('.hubExploreBtn[data-hub-url]');if(!btn)return;e.preventDefault();e.stopPropagation();e.stopImmediatePropagation();window.open(btn.dataset.hubUrl,'_self')},true)})();</script>
-</body></html>
+
+<header class="header">
+  <div class="headerTop">
+    <button class="menuBtn">☰</button>
+    <div class="brand">
+      <b>분열왕국 Matrix</b>
+      <span>성경 시대별 총람</span>
+    </div>
+    <div class="period">BC 930 ~ BC 586</div>
+  </div>
+  <div class="headerBottom">
+    <span>분열왕국시대</span>
+    <span>왕 · 선지자 · 주변국 · 사건</span>
+  </div>
+</header>
+
+<nav class="tabs">
+  <button class="tab active" data-view="all">전체</button>
+  <button class="tab active" data-view="northKings">북왕</button>
+  <button class="tab active" data-view="southKings">남왕</button>
+  <button class="tab active" data-view="prophets">선지자</button>
+  <button class="tab active" data-view="nations">주변국</button>
+  <button class="tab active" data-view="events">사건</button>
+</nav>
+
+<main class="main" id="mainScroll">
+<div class="matrix" id="matrix">
+
+<div class="left axisLeft">연대</div>
+<div class="axis">
+  <div class="tick" style="left:4.00%">BC 930</div>
+  <div class="tick" style="left:17.08%">BC 880</div>
+  <div class="tick" style="left:30.16%">BC 830</div>
+  <div class="tick" style="left:43.24%">BC 780</div>
+  <div class="tick red" style="left:58.42%">BC 722</div>
+  <div class="tick" style="left:63.91%">BC 701</div>
+  <div class="tick" style="left:84.58%">BC 622</div>
+  <div class="tick red" style="left:94.00%">BC 586</div>
+</div>
+
+<div class="left rowLabel labelNorth view northKings">북이스라엘<br>왕</div>
+<div class="plot view northKings" style="height:66px">
+  <div class="grid" style="left:4.00%"></div><div class="grid" style="left:17.08%"></div><div class="grid" style="left:30.16%"></div><div class="grid" style="left:43.24%"></div><div class="grid" style="left:58.42%"></div><div class="grid" style="left:63.91%"></div><div class="grid" style="left:84.58%"></div><div class="grid" style="left:94.00%"></div>
+  <div class="bar northBar" data-title="여로보암 1세" data-info="연대: BC 930~909" style="left:4.00%;top:24px;width:5.49%">여로보암 1세</div>
+  <div class="bar northBar pin-top" data-display-name="나답" data-title="나답" data-info="연대: BC 909~908" style="left:9.49%;top:24px;width:0.85%">나답</div>
+  <div class="bar northBar" data-title="바아사" data-info="연대: BC 908~886" style="left:9.76%;top:24px;width:5.76%">바아사</div>
+  <div class="bar northBar pin-bottom" data-display-name="엘라" data-title="엘라" data-info="연대: BC 886~885" style="left:15.51%;top:24px;width:0.85%">엘라</div>
+  <div class="bar northBar pin-top" data-display-name="시므리" data-title="시므리" data-info="연대: BC 885, 7일 왕" style="left:15.77%;top:24px;width:0.85%">시므리</div>
+  <div class="bar northBar" data-title="오므리" data-info="연대: BC 885~874" style="left:15.77%;top:24px;width:2.88%">오므리</div>
+  <div class="bar northBar" data-title="아합" data-info="연대: BC 874~853" style="left:18.65%;top:24px;width:5.49%">아합</div>
+  <div class="bar northBar pin-top" data-display-name="아하시야" data-title="아하시야" data-info="연대: BC 853~852" style="left:24.15%;top:24px;width:0.85%">아하시야</div>
+  <div class="bar northBar" data-title="여호람" data-info="연대: BC 852~841" style="left:24.41%;top:24px;width:2.88%">여호람</div>
+  <div class="bar northBar" data-title="예후" data-info="연대: BC 841~814" style="left:27.28%;top:24px;width:7.06%">예후</div>
+  <div class="bar northBar" data-title="여호아하스" data-info="연대: BC 814~798" style="left:34.35%;top:24px;width:4.19%">여호아하스</div>
+  <div class="bar northBar" data-title="요아스" data-info="연대: BC 798~782" style="left:38.53%;top:24px;width:4.19%">요아스</div>
+  <div class="bar northBar" data-title="여로보암 2세" data-info="연대: BC 793~753" style="left:39.84%;top:24px;width:10.47%">여로보암 2세</div>
+  <div class="bar northBar pin-top" data-display-name="스가랴" data-title="스가랴" data-info="연대: BC 753" style="left:50.31%;top:24px;width:0.85%">스가랴</div>
+  <div class="bar northBar pin-bottom" data-display-name="살룸" data-title="살룸" data-info="연대: BC 752, 단명 왕" style="left:50.57%;top:24px;width:0.85%">살룸</div>
+  <div class="bar northBar" data-title="므나헴" data-info="연대: BC 752~742" style="left:50.57%;top:24px;width:2.62%">므나헴</div>
+  <div class="bar northBar pin-top" data-display-name="브가히야" data-title="브가히야" data-info="연대: BC 742~740" style="left:53.19%;top:24px;width:0.85%">브가히야</div>
+  <div class="bar northBar" data-title="베가" data-info="연대: BC 740~732" style="left:53.71%;top:24px;width:2.09%">베가</div>
+  <div class="bar northBar" data-title="호세아" data-info="연대: BC 732~722, 북이스라엘 마지막 왕" style="left:55.80%;top:24px;width:2.62%">호세아</div>
+  <div class="bar northBar pin-bottom" data-display-name="BC722 멸망" data-title="북이스라엘 멸망" data-info="BC 722 앗수르에 의해 사마리아가 함락되고 북이스라엘이 멸망합니다." style="left:58.42%;top:24px;width:0.85%">멸망</div>
+</div>
+
+<div class="left rowLabel labelSouth view southKings">남유다<br>왕</div>
+<div class="plot view southKings" style="height:88px">
+  <div class="grid" style="left:4.00%"></div><div class="grid" style="left:17.08%"></div><div class="grid" style="left:30.16%"></div><div class="grid" style="left:43.24%"></div><div class="grid" style="left:58.42%"></div><div class="grid" style="left:63.91%"></div><div class="grid" style="left:84.58%"></div><div class="grid" style="left:94.00%"></div>
+
+  <div class="bar southBar" data-title="르호보암" data-info="연대: BC 930~913" style="left:4.00%;top:34px;width:4.45%">르호보암</div>
+  <div class="bar southBar pin-top south-pin" data-display-name="아비야" data-title="아비야" data-info="연대: BC 913~911" style="left:8.45%;top:34px;width:0.85%">아비야</div>
+  <div class="bar southBar" data-title="아사" data-info="연대: BC 911~870" style="left:8.97%;top:34px;width:10.73%">아사</div>
+  <div class="bar southBar" data-title="여호사밧" data-info="연대: BC 873~848" style="left:18.91%;top:12px;width:6.54%">여호사밧</div>
+  <div class="bar southBar" data-title="여호람" data-info="연대: BC 853~841" style="left:24.15%;top:34px;width:3.14%">여호람</div>
+  <div class="bar southBar pin-top south-pin" data-display-name="아하시야" data-title="아하시야" data-info="연대: BC 841" style="left:27.28%;top:34px;width:0.85%">아하시야</div>
+  <div class="bar southBar pin-bottom south-pin" data-display-name="아달랴" data-title="아달랴" data-info="연대: BC 841~835" style="left:27.28%;top:34px;width:1.57%">아달랴</div>
+  <div class="bar southBar" data-title="요아스" data-info="연대: BC 835~796" style="left:28.85%;top:34px;width:10.20%">요아스</div>
+  <div class="bar southBar" data-title="아마샤" data-info="연대: BC 796~767" style="left:39.06%;top:34px;width:7.59%">아마샤</div>
+  <div class="bar southBar" data-title="웃시야" data-info="연대: BC 792~740" style="left:40.10%;top:56px;width:13.60%">웃시야</div>
+  <div class="bar southBar" data-title="요담" data-info="연대: BC 750~732" style="left:51.09%;top:12px;width:4.71%">요담</div>
+  <div class="bar southBar" data-title="아하스" data-info="연대: BC 735~716" style="left:55.02%;top:34px;width:4.97%">아하스</div>
+  <div class="bar southBar" data-title="히스기야" data-info="연대: BC 716~687" style="left:59.99%;top:34px;width:7.59%">히스기야</div>
+  <div class="bar southBar" data-title="므낫세" data-info="연대: BC 687~643" style="left:67.58%;top:34px;width:11.51%">므낫세</div>
+  <div class="bar southBar pin-top south-pin" data-display-name="아몬" data-title="아몬" data-info="연대: BC 643~641" style="left:79.09%;top:34px;width:0.85%">아몬</div>
+  <div class="bar southBar" data-title="요시야" data-info="연대: BC 641~609" style="left:79.61%;top:34px;width:8.37%">요시야</div>
+  <div class="bar southBar pin-top south-pin" data-display-name="여호아하스" data-title="여호아하스" data-info="연대: BC 609" style="left:87.98%;top:34px;width:0.85%">여호아하스</div>
+  <div class="bar southBar" data-title="여호야김" data-info="연대: BC 609~598" style="left:87.98%;top:56px;width:2.88%">여호야김</div>
+  <div class="bar southBar pin-top south-pin" data-display-name="여호야긴" data-title="여호야긴" data-info="연대: BC 598~597" style="left:90.86%;top:34px;width:0.85%">여호야긴</div>
+  <div class="bar southBar" data-title="시드기야" data-info="연대: BC 597~586, 남유다 마지막 왕" style="left:91.12%;top:56px;width:2.88%">시드기야</div>
+</div>
+
+<div class="left rowLabel labelProphets view prophets">선지자</div>
+<div class="plot view prophets" style="height:278px">
+  <div class="grid" style="left:4.00%"></div><div class="grid" style="left:17.08%"></div><div class="grid" style="left:30.16%"></div><div class="grid" style="left:43.24%"></div><div class="grid" style="left:58.42%"></div><div class="grid" style="left:63.91%"></div><div class="grid" style="left:84.58%"></div><div class="grid" style="left:94.00%"></div>
+  <div class="bar prophetBar" data-title="아히야" data-info="활동시기: 대략 BC 930~910&#10;여로보암 1세와 관련된 선지자. 왕상 11장, 14장" style="left:4.00%;top:10px;width:5.23%">아히야</div>
+  <div class="bar prophetBar" data-title="스마야" data-info="활동시기: 대략 BC 930~910&#10;왕국 분열 직후 유다에 경고한 선지자. 왕상 12장, 대하 11장" style="left:4.00%;top:32px;width:5.23%">스마야</div>
+  <div class="bar prophetBar" data-title="엘리야" data-info="활동시기: 대략 BC 875~850&#10;아합 시대 중심 활동. 갈멜산 대결과 연결. 왕상 17~19장" style="left:18.39%;top:54px;width:6.54%">엘리야</div>
+  <div class="bar prophetBar" data-title="엘리사" data-info="활동시기: 대략 BC 850~800&#10;엘리야 이후 북이스라엘 여러 왕 시기에 활동. 왕하 2~13장" style="left:24.93%;top:76px;width:13.08%">엘리사</div>
+  <div class="bar prophetBar" data-title="요나" data-info="활동시기: 대략 BC 790~760&#10;여로보암 2세 시기와 관련. 왕하 14:25, 요나" style="left:40.63%;top:98px;width:7.85%">요나</div>
+  <div class="bar prophetBar" data-title="아모스" data-info="활동시기: 대략 BC 760~750&#10;여로보암 2세 말기 북이스라엘 사회 불의 책망" style="left:48.48%;top:120px;width:2.62%">아모스</div>
+  <div class="bar prophetBar" data-title="호세아" data-info="활동시기: 대략 BC 755~722&#10;북이스라엘 멸망 전까지 언약 배반을 경고" style="left:49.78%;top:142px;width:8.63%">호세아</div>
+  <div class="bar prophetBar" data-title="이사야" data-info="활동시기: 대략 BC 740~681&#10;웃시야·요담·아하스·히스기야 시대. 앗수르 위기와 연결" style="left:53.71%;top:164px;width:15.44%">이사야</div>
+  <div class="bar prophetBar" data-title="미가" data-info="활동시기: 대략 BC 735~700&#10;요담·아하스·히스기야 시대. 남유다 사회 불의와 심판 경고" style="left:55.02%;top:186px;width:9.16%">미가</div>
+  <div class="bar prophetBar" data-title="나훔" data-info="활동시기: 대략 BC 663~612&#10;앗수르 니느웨 심판 예언. 니느웨 멸망 직전 흐름" style="left:73.85%;top:208px;width:13.34%">나훔</div>
+  <div class="bar prophetBar" data-title="스바냐" data-info="활동시기: 대략 BC 640~609&#10;요시야 시대 활동. 요시야 개혁 전후 배경" style="left:79.87%;top:230px;width:8.11%">스바냐</div>
+  <div class="bar prophetBar" data-title="예레미야" data-info="활동시기: 대략 BC 627~586&#10;요시야 13년부터 남유다 멸망기까지 활동한 선지자" style="left:83.27%;top:252px;width:10.73%">예레미야</div>
+</div>
+
+<div class="left rowLabel labelNations view nations">주변국</div>
+<div class="plot view nations" style="height:190px">
+  <div class="grid" style="left:4.00%"></div><div class="grid" style="left:17.08%"></div><div class="grid" style="left:30.16%"></div><div class="grid" style="left:43.24%"></div><div class="grid" style="left:58.42%"></div><div class="grid" style="left:63.91%"></div><div class="grid" style="left:84.58%"></div><div class="grid" style="left:94.00%"></div>
+
+  <div class="bar nationBar" data-title="애굽 (이집트)" data-info="분열왕국 전 기간에 걸쳐 유다와 이스라엘 주변 정세에 영향" style="left:4.00%;top:10px;width:90.00%"><span class="scroll-label">애굽 (이집트)</span></div>
+  <div class="bar nationBar" data-title="아람 (시리아)" data-info="북이스라엘과 지속적으로 충돌한 북방 세력" style="left:4.00%;top:32px;width:51.80%"><span class="scroll-label">아람 (시리아)</span></div>
+  <div class="bar nationBar" data-title="두로·시돈 (레바논)" data-info="이세벨과 바알 문화 유입의 배경이 된 해안 세력" style="left:18.65%;top:54px;width:39.77%"><span class="scroll-label">두로·시돈 (레바논)</span></div>
+  <div class="bar nationBar" data-title="모압 (요르단)" data-info="이스라엘 및 유다와 영토·조공 갈등을 겪은 동쪽 세력" style="left:24.93%;top:76px;width:63.05%"><span class="scroll-label">모압 (요르단)</span></div>
+  <div class="bar nationBar" data-title="암몬 (요르단)" data-info="요단 동편에서 유다 말기까지 영향을 준 세력" style="left:32.78%;top:98px;width:58.34%"><span class="scroll-label">암몬 (요르단)</span></div>
+  <div class="bar nationBar" data-title="에돔 (요르단 남부)" data-info="남유다와 남방 무역로를 두고 갈등한 세력" style="left:35.40%;top:120px;width:58.60%"><span class="scroll-label">에돔 (요르단 남부)</span></div>
+  <div class="bar nationBar" data-title="앗수르 (이라크 북부)" data-info="북이스라엘을 멸망시키고 남유다를 압박한 제국" style="left:52.40%;top:142px;width:34.80%"><span class="scroll-label">앗수르 (이라크 북부)</span></div>
+  <div class="bar nationBar" data-title="바벨론 (이라크)" data-info="남유다 예루살렘을 함락시키고 포로기를 연 제국" style="left:83.53%;top:164px;width:10.47%"><span class="scroll-label">바벨론 (이라크)</span></div>
+</div>
+
+<div class="left rowLabel labelEvents view events">핵심<br>사건</div>
+<div class="plot view events" style="height:188px">
+  <div class="grid" style="left:4.00%"></div><div class="grid" style="left:17.08%"></div><div class="grid" style="left:30.16%"></div><div class="grid" style="left:43.24%"></div><div class="grid" style="left:58.42%"></div><div class="grid" style="left:63.91%"></div><div class="grid" style="left:84.58%"></div><div class="grid" style="left:94.00%"></div>
+
+  <div class="dot" data-title="왕국 분열" data-info="연도: BC 930&#10;솔로몬 사후 남북 왕국 분열" style="left:4.00%;top:16px"></div>
+  <div class="eventText" style="left:4.00%;top:32px">BC930<br>왕국분열</div>
+  <div class="dot" data-title="아합과 바알 숭배 확산" data-info="우상 숭배의 극치와 신앙적 정체성 위기" style="left:30%;top:16px"></div>
+  <div class="eventText" style="left:30%;top:32px">아합<br>바알숭배</div>
+  <div class="dot" data-title="갈멜산 대결" data-info="엘리야 선지자와 바알 선지자들의 대결" style="left:24.93%;top:76px" data-hub="hubs/index.html?hub=carmel"></div>
+  <div class="eventText hasHub" style="left:24.93%;top:92px">BC850경<br>갈멜산<br><span class="hubExploreBtn" data-hub-url="hubs/index.html?hub=carmel">허브탐험</span></div>
+  <div class="dot" data-title="예후의 아합 왕조 심판" data-info="예후의 혁명과 아합 가문을 심판" style="left:27.28%;top:16px"></div>
+  <div class="eventText" style="left:27.28%;top:32px">BC841<br>예후</div>
+  <div class="dot" data-title="아모스·호세아의 경고" data-info="멸망 전 도덕적 배도와 언약 배반 경고" style="left:49.78%;top:76px"></div>
+  <div class="eventText" style="left:49.78%;top:92px">아모스<br>호세아</div>
+  <div class="dot" data-title="북이스라엘 멸망" data-info="BC 722 사마리아 함락 및 사멸" style="left:58.42%;top:136px" data-hub="hubs/index.html?hub=north-israel-fall"></div>
+  <div class="eventText hasHub" style="left:58.42%;top:152px">BC722<br>북이스라엘<br>멸망<br><span class="hubExploreBtn" data-hub-url="hubs/index.html?hub=north-israel-fall">허브탐험</span></div>
+  <div class="dot" data-title="히스기야와 앗수르 위기" data-info="BC 701 산헤립 군대의 예루살렘 포위와 극적 구원" style="left:63.91%;top:16px" data-hub="hubs/index.html?hub=hezekiah-assyria"></div>
+  <div class="eventText hasHub" style="left:63.91%;top:32px">BC701<br>앗수르위기<br><span class="hubExploreBtn" data-hub-url="hubs/index.html?hub=hezekiah-assyria">허브탐험</span></div>
+  <div class="dot" data-title="요시야 개혁" data-info="BC 622 성전 수리 중 성경 율법책 발견과 전국적 개혁" style="left:84.58%;top:76px" data-hub="hubs/index.html?hub=josiah-reform"></div>
+  <div class="eventText hasHub" style="left:84.58%;top:92px">BC622<br>요시야개혁<br><span class="hubExploreBtn" data-hub-url="hubs/index.html?hub=josiah-reform">허브탐험</span></div>
+  <div class="dot" data-title="예루살렘 함락" data-info="BC 586 느부갓네살에 의한 남유다 함락과 성전 파괴" style="left:94.00%;top:136px" data-hub="hubs/index.html?hub=jerusalem-fall"></div>
+  <div class="eventText hasHub" style="left:94.00%;top:152px">BC586<br>예루살렘<br>함락<br><span class="hubExploreBtn" data-hub-url="hubs/index.html?hub=jerusalem-fall">허브탐험</span></div>
+</div>
+
+</div>
+
+<section class="cen-enhance-panel" id="cen-divided-enhance">
+  <div class="cen-layer-card"><div class="cen-layer-title">제국 패권 흐름</div><div class="cen-empire-flow">
+    <div class="cen-node"><b>아람</b><span>분열 초기 압박<br>북이스라엘과 충돌</span></div>
+    <div class="cen-node"><b>앗수르</b><span>사마리아 함락<br>북이스라엘 멸망</span></div>
+    <div class="cen-node dark"><b>바벨론</b><span>예루살렘 함락<br>성전 파괴</span></div>
+  </div></div>
+  <div class="cen-layer-card"><div class="cen-layer-title">선지자 경고 흐름</div><div class="cen-prophet-flow">
+    <div class="cen-node"><b>엘리야</b><span>갈멜산 대결<br>돌아오라</span></div>
+    <div class="cen-node"><b>엘리사</b><span>계승되는<br>선지자 사역</span></div>
+    <div class="cen-node"><b>이사야</b><span>앗수르 위기 속<br>경고와 소망</span></div>
+    <div class="cen-node dark"><b>예레미야</b><span>예루살렘 함락<br>직전의 눈물</span></div>
+  </div></div>
+  <div class="cen-layer-card"><div class="cen-layer-title">왕국 붕괴 흐름</div><div class="cen-collapse-flow">
+    <div class="cen-node"><b>북이스라엘</b><span>여로보암의 죄 → 우상체계 유지 → 앗수르 압박 → 사마리아 함락</span></div>
+    <div class="cen-node dark"><b>남유다</b><span>히스기야 회복 → 므낫세 타락 → 요시야 마지막 불꽃 → 예루살렘 함락</span></div>
+  </div></div>
+  <div class="cen-layer-card"><div class="cen-layer-title">멸망 카운트다운</div><div class="cen-countdown">
+    <div class="cen-count">갈멜산<small>회복 가능성</small></div>
+    <div class="cen-count">사마리아<small>북왕국 멸망</small></div>
+    <div class="cen-count">히스기야<small>잠시 구원</small></div>
+    <div class="cen-count">요시야<small>마지막 개혁</small></div>
+    <div class="cen-count">BC586<small>예루살렘 함락</small></div>
+  </div></div>
+  <div class="cen-warning-strip">왕국은 외부 제국 때문에만 무너진 것이 아닙니다. 안에서는 우상숭배가 깊어졌고, 밖에서는 제국의 압박이 거세졌으며, 선지자의 경고는 끝내 왕국의 붕괴 앞에서 눈물로 바뀝니다.</div>
+</section>
+
+</main>
+
+<footer class="actions">
+  <button class="action">성경연대기</button>
+  <button class="action">연결탐험</button>
+  <button class="action">한눈에 성경</button>
+  <button class="action">허브</button>
+</footer>
+
+<div class="modal" id="modal">
+  <div class="card">
+    <div class="cardTitle" id="modalTitle"></div>
+    <div class="cardBody" id="modalBody"></div>
+    <button class="close" id="closeModal">닫기</button>
+  </div>
+</div>
+
+
+<script id="cen-matrix-hub-link-script">
+(function(){
+  document.addEventListener('click', function(e){
+    const hub = e.target.closest('.dot[data-hub]');
+    if(!hub) return;
+    e.preventDefault();
+    e.stopPropagation();
+    e.stopImmediatePropagation();
+    const url = hub.dataset.hub;
+    if(url){
+      window.open(url, '_self');
+    }
+  }, true);
+})();
+</script>
+
+<script>
+const tabs = [...document.querySelectorAll('.tab')];
+const views = [...document.querySelectorAll('.view')];
+
+tabs.forEach(tab => {
+  tab.onclick = () => {
+    const targetView = tab.dataset.view;
+    if (targetView === 'all') {
+      const isAllActive = tab.classList.contains('active');
+      tabs.forEach(t => {
+        if (isAllActive) t.classList.remove('active');
+        else t.classList.add('active');
+      });
+    } else {
+      tab.classList.toggle('active');
+      const nonAllTabs = tabs.filter(t => t.dataset.view !== 'all');
+      const allActive = nonAllTabs.every(t => t.classList.contains('active'));
+      const allTab = document.querySelector('.tab[data-view="all"]');
+      if (allActive) allTab.classList.add('active');
+      else allTab.classList.remove('active'); // 오류 수정
+    }
+
+    const activeViews = tabs
+      .filter(t => t.classList.contains('active') && t.dataset.view !== 'all')
+      .map(t => t.dataset.view);
+
+    views.forEach(v => {
+      const match = activeViews.some(cl => v.classList.contains(cl));
+      v.classList.toggle('hidden', !match);
+    });
+    updateStickyLabels();
+  };
+});
+
+const modal = document.getElementById('modal');
+const mt = document.getElementById('modalTitle');
+const mb = document.getElementById('modalBody');
+
+document.querySelectorAll('[data-title]').forEach(el => {
+  el.onclick = () => {
+    mt.textContent = el.dataset.title;
+    mb.textContent = el.dataset.info || '준비중입니다.';
+    modal.classList.add('show');
+  };
+});
+document.getElementById('closeModal').onclick = () => modal.classList.remove('show');
+modal.onclick = e => { if (e.target === modal) modal.classList.remove('show'); };
+
+const mainScroll = document.getElementById('mainScroll');
+
+function updateStickyLabels() {
+  const scrollLeft = mainScroll.scrollLeft;
+  const labels = document.querySelectorAll('.scroll-label');
+
+  labels.forEach(label => {
+    const bar = label.parentElement;
+    if (!bar) return;
+    const barLeft = bar.offsetLeft;
+    const barWidth = bar.offsetWidth;
+    const labelWidth = label.offsetWidth || 80;
+    let targetX = scrollLeft - barLeft + 6; 
+    const maxX = barWidth - labelWidth - 8;
+    if (targetX < 0) targetX = 0;
+    if (targetX > maxX) targetX = maxX;
+    label.style.transform = `translateX(${targetX}px)`;
+  });
+}
+
+mainScroll.addEventListener('scroll', updateStickyLabels, { passive: true });
+window.addEventListener('resize', updateStickyLabels);
+setTimeout(updateStickyLabels, 100);
+
+if('serviceWorker' in navigator){
+  navigator.serviceWorker.register('./sw.js?v=matrix-review-20260610').catch(()=>{});
+}
+</script>
+
+<script id="cen-matrix-footer-link-script">
+(function(){
+  const footerLinks = {
+    '성경연대기':'https://centiger.github.io/cen-bible-chrololgy/?view=timeline',
+    '연결탐험':'https://centiger.github.io/cen-bible-chrololgy/#hub',
+    '한눈에 성경':'https://centiger.github.io/CEN-Bible2.0/#overview66'
+  };
+  const hubItems = [
+    {no:'①', title:'갈멜산 대결', sub:'여호와냐 바알이냐', url:'hubs/index.html?hub=carmel'},
+    {no:'②', title:'북이스라엘 멸망', sub:'사마리아 함락', url:'hubs/index.html?hub=north-israel-fall'},
+    {no:'③', title:'히스기야와 앗수르 위기', sub:'예루살렘 포위와 구원', url:'hubs/index.html?hub=hezekiah-assyria'},
+    {no:'④', title:'요시야 개혁', sub:'율법책 발견과 마지막 개혁', url:'hubs/index.html?hub=josiah-reform'},
+    {no:'⑤', title:'예루살렘 함락', sub:'성전 파괴와 포로', url:'hubs/index.html?hub=jerusalem-fall'}
+  ];
+  function openHubList(){
+    mt.textContent = '분열왕국 허브 목록';
+    mb.innerHTML = '<div class="hubListModal">' + hubItems.map(h =>
+      `<button type="button" data-hub-url="${h.url}">${h.no} ${h.title}<span>${h.sub}</span></button>`
+    ).join('') + '</div>';
+    modal.classList.add('show');
+  }
+  document.addEventListener('click', function(e){
+    const hubBtn = e.target.closest('[data-hub-url]');
+    if(hubBtn){
+      e.preventDefault();
+      window.open(hubBtn.dataset.hubUrl, '_self');
+      return;
+    }
+    const btn = e.target.closest('footer.actions .action');
+    if(!btn) return;
+    const label = (btn.textContent || '').trim();
+    if(label === '허브'){
+      e.preventDefault();
+      e.stopPropagation();
+      openHubList();
+      return;
+    }
+    const url = footerLinks[label];
+    if(!url) return;
+    e.preventDefault();
+    e.stopPropagation();
+    window.open(url, '_self');
+  }, true);
+
+  const menuButton=document.querySelector('.menuBtn');
+  if(menuButton){
+    menuButton.addEventListener('click', function(e){
+      e.preventDefault();
+      openHubList();
+    });
+  }
+})();
+</script>
+
+
+
+<script id="hub-explore-button-script">
+(function(){
+  document.addEventListener('click', function(e){
+    const btn = e.target.closest('.hubExploreBtn[data-hub-url]');
+    if(!btn) return;
+    e.preventDefault();
+    e.stopPropagation();
+    e.stopImmediatePropagation();
+    window.open(btn.dataset.hubUrl, '_self');
+  }, true);
+})();
+</script>
+
+</body>
+</html>

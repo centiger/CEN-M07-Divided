@@ -1,67 +1,97 @@
 <!DOCTYPE html>
 <html lang="ko">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-<title>포로귀환 5허브</title>
-<link rel="manifest" href="manifest.json">
-<meta name="theme-color" content="#236B63">
-<style>
-*{box-sizing:border-box}html,body{margin:0;padding:0;font-family:system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;background:#f4fbf8;color:#10201d}body{min-height:100vh}.app{max-width:880px;margin:0 auto;padding:14px 12px 96px}.top{background:linear-gradient(135deg,#164f49,#236B63);color:#fff;border-radius:20px;padding:16px 16px 14px;box-shadow:0 8px 24px rgba(20,80,70,.18)}.topbar{display:flex;gap:8px;align-items:center;margin-bottom:12px;flex-wrap:wrap}.backBtn,.pill,.listBtn{border:1px solid rgba(255,255,255,.35);background:rgba(255,255,255,.1);color:#fff;border-radius:999px;padding:8px 10px;font-size:12px;font-weight:900;text-decoration:none}.listBtn{cursor:pointer}.pill{margin-left:auto;color:#d8fff8}.kicker{font-size:12px;font-weight:900;color:#bff7ee;margin-bottom:6px}.top h1{margin:0;font-size:26px;line-height:1.12}.top p{margin:8px 0 0;color:#e6fff9;font-size:14px;line-height:1.5}.tags{display:flex;gap:6px;flex-wrap:wrap;margin-top:10px}.tags span{border:1px solid rgba(255,255,255,.35);background:rgba(255,255,255,.12);color:#e6fff9;border-radius:999px;padding:5px 8px;font-size:11px;font-weight:900}.tabs{display:flex;gap:7px;overflow-x:auto;padding:12px 0 4px}.tab{flex:0 0 auto;border:1px solid #9fc7c0;background:#fff;color:#123a35;border-radius:999px;padding:8px 12px;font-size:12px;font-weight:900;text-decoration:none}.tab.active{background:#236B63;color:#fff;border-color:#236B63}.card{background:#fff;border:1px solid #a9d2ca;border-radius:18px;padding:15px;margin:12px 0;box-shadow:0 4px 14px rgba(20,80,70,.08)}.sectionTitle{font-size:15px;font-weight:900;color:#123a35;border-left:6px solid #236B63;padding-left:8px;margin:0 0 12px}.summaryGrid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:9px}.mini{border:1px solid #c7e2dc;background:#fbfffd;border-radius:14px;padding:11px}.mini b{display:block;font-size:12px;color:#236B63;margin-bottom:4px}.mini span{display:block;font-size:13px;font-weight:900;line-height:1.35;color:#152f2b}.flow{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:8px}.node{min-height:86px;border:1px solid #b6d9d2;background:#fbfffd;border-radius:16px;padding:10px 8px;text-align:center;position:relative}.node:not(:last-child)::after{content:"→";position:absolute;right:-10px;top:34px;color:#236B63;font-weight:900}.ico{font-size:24px}.node b{display:block;font-size:12px;color:#123a35;margin-top:3px}.node small{display:block;font-size:10.5px;color:#49645f;margin-top:4px;line-height:1.35}.mapWrap{border:1px solid #c7e2dc;border-radius:18px;overflow:hidden;background:#e9f6f3}.mapWrap img{display:block;width:100%;height:auto;background:#e9f6f3}.caption{padding:10px 12px;font-size:12px;line-height:1.5;color:#385550;background:#fbfffd}.infoGrid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:9px}.info{border:1px solid #c7e2dc;background:#fbfffd;border-radius:14px;padding:11px}.info b{font-size:13px;color:#123a35}.info p{font-size:12px;line-height:1.45;margin:5px 0 0;color:#4d665f}.timeline{display:flex;gap:8px;overflow-x:auto;padding:2px 0}.t{flex:0 0 118px;border:1px solid #c7e2dc;background:#fbfffd;border-radius:14px;padding:10px;text-align:center}.t strong{display:block;color:#236B63;font-size:13px}.t span{display:block;margin-top:5px;font-size:11.5px;line-height:1.35;font-weight:800}.t.active{background:linear-gradient(135deg,#236B63,#164f49);color:#fff;border-color:#57BFB6}.t.active strong,.t.active span{color:#fff}.note{background:linear-gradient(135deg,#effffb,#dff5ef);border:1px solid #9fc7c0;border-radius:16px;padding:13px;font-size:13px;line-height:1.6;font-weight:700;color:#16332f}.verseCard{display:grid;gap:9px}.verse{background:#fbfffd;border:1px solid #c7e2dc;border-radius:15px;padding:12px}.verse b{display:block;color:#236B63;font-size:13px;margin-bottom:6px}.verse p{margin:0;font-size:13px;line-height:1.65;font-weight:750;color:#18332f}.listFlow{display:grid;gap:8px}.listFlow .step{background:#fbfffd;border:1px solid #c7e2dc;border-radius:14px;padding:11px;font-size:13px;font-weight:850;color:#16332f;line-height:1.45}.peopleGrid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:9px}.person{background:#fbfffd;border:1px solid #c7e2dc;border-radius:14px;padding:11px}.person .role{display:inline-block;background:#e2f5ef;color:#236B63;border-radius:999px;padding:4px 8px;font-size:11px;font-weight:950;margin-bottom:6px}.person b{display:block;font-size:14px;color:#123a35}.person p{font-size:12px;color:#4d665f;line-height:1.45;margin:5px 0 0}.messageBox{background:linear-gradient(135deg,#123a35,#236B63);color:#fff;border-radius:18px;padding:17px;border:1px solid #57BFB6;box-shadow:0 8px 22px rgba(20,80,70,.2)}.messageBox b{display:block;color:#bff7ee;margin-bottom:8px}.messageBox p{margin:0;font-size:15px;line-height:1.65;font-weight:900}.actions{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:12px}.action{display:block;text-align:center;text-decoration:none;border-radius:13px;padding:12px;font-size:13px;font-weight:900}.primary{background:#236B63;color:#fff}.secondary{background:#fff;border:1px solid #9fc7c0;color:#123a35}.drawer{position:fixed;inset:0;background:rgba(0,0,0,.42);display:none;align-items:center;justify-content:center;z-index:1000;padding:18px}.drawer.show{display:flex}.drawerCard{width:min(430px,100%);background:#fbfffd;border:1px solid #9fc7c0;border-radius:18px;padding:15px;box-shadow:0 10px 30px rgba(0,0,0,.24)}.drawerHead{display:flex;align-items:center;justify-content:space-between;margin-bottom:10px}.drawerHead b{font-size:18px;color:#123a35}.drawerClose{border:0;background:#236B63;color:white;border-radius:10px;padding:8px 10px;font-weight:900}.hubList{display:grid;gap:8px}.hubItem{display:block;text-decoration:none;border:1px solid #c7e2dc;background:#fff;border-radius:14px;padding:12px;color:#123a35}.hubItem b{display:block;font-size:14px}.hubItem span{display:block;margin-top:4px;font-size:12px;color:#536e68;line-height:1.35}.hubItem.active{background:linear-gradient(135deg,#236B63,#164f49);color:#fff;border-color:#57BFB6}.hubItem.active span{color:#e6fff9}.bottom{position:fixed;left:0;right:0;bottom:0;background:#effaf6;border-top:1px solid #9fc7c0;display:flex;gap:8px;padding:9px 10px;z-index:60}.bottom a,.bottom button{flex:1;text-align:center;text-decoration:none;border:1px solid #9fc7c0;background:#fff;border-radius:13px;padding:10px 4px;font-size:11px;font-weight:950;color:#123a35}.bottom .main{background:#236B63;color:#fff;border-color:#236B63}@media(max-width:560px){.summaryGrid,.infoGrid,.peopleGrid{grid-template-columns:1fr}.flow{grid-template-columns:repeat(2,minmax(0,1fr))}.node:nth-child(2)::after,.node:nth-child(4)::after{display:none}.top h1{font-size:24px}.pill{margin-left:0}.actions{grid-template-columns:1fr}}
-</style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0,viewport-fit=cover">
+  <title>CEN 분열왕국 5허브</title>
+  <link rel="manifest" href="manifest.json">
+  <meta name="theme-color" content="#17304a">
+  <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-<div class="app">
-  <section class="top">
-    <div class="topbar"><a class="backBtn" href="../index.html">← Matrix</a><button class="listBtn" id="hubListBtn" type="button">허브 목록</button><span class="pill">포로귀환 시대 · 회복의 과정</span></div>
-    <div class="kicker" id="kicker"></div>
-    <h1 id="title"></h1>
-    <p id="subtitle"></p>
-    <div class="tags" id="tags"></div>
-  </section>
-  <nav class="tabs" id="tabs"></nav>
-  <main id="content"></main>
-</div>
-<nav class="bottom"><a id="prevBottom" href="#">이전</a><button class="main" id="hubBottom" type="button">허브목록</button><a id="nextBottom" href="#">다음</a></nav>
-<div class="drawer" id="drawer"><div class="drawerCard"><div class="drawerHead"><b>포로귀환 허브 목록</b><button class="drawerClose" id="drawerClose">닫기</button></div><div class="hubList" id="hubList"></div></div></div>
-<script>
-let HUBS=[];let slug=new URLSearchParams(location.search).get('hub');
-const $=id=>document.getElementById(id);
-function esc(s){return String(s??'')}
-function hrefFor(h,dir){if(!h)return '../index.html';if(dir==='prev'){return h.prev?`?hub=${h.prev}`:'../index.html'}if(dir==='next'){return h.next?`?hub=${h.next}`:(h.nextUrl||'../index.html')}return '#'}
-function labelFor(h,dir){if(dir==='prev')return h.prevLabel||'← 이전 허브';return h.nextLabel||'다음 허브 →'}
-function nodes(items){return (items||[]).map(i=>`<div class="node"><div class="ico">${esc(i.icon)}</div><b>${esc(i.title)}</b><small>${esc(i.text)}</small></div>`).join('')}
-function renderCards(title,items,cls='infoGrid'){if(!items||!items.length)return '';return `<section class="card"><h2 class="sectionTitle">${title}</h2><div class="${cls}">${items.map(x=>`<div class="info"><b>${esc(x.title||x[0])}</b><p>${esc(x.text||x[1]||'')}</p></div>`).join('')}</div></section>`}
-function renderList(title,items){if(!items||!items.length)return '';return `<section class="card"><h2 class="sectionTitle">${title}</h2><div class="listFlow">${items.map(x=>`<div class="step">${esc(x)}</div>`).join('')}</div></section>`}
-function renderVerse(items){if(!items||!items.length)return '';return `<section class="card"><h2 class="sectionTitle">대표성구</h2><div class="verseCard">${items.map(v=>`<div class="verse"><b>${esc(v.ref)}</b><p>${esc(v.text)}</p></div>`).join('')}</div></section>`}
-function renderPeople(items){if(!items||!items.length)return '';return `<section class="card"><h2 class="sectionTitle">핵심인물</h2><div class="peopleGrid">${items.map(p=>`<div class="person"><span class="role">${esc(p.role)}</span><b>${esc(p.name)}</b><p>${esc(p.text)}</p></div>`).join('')}</div></section>`}
-function renderBible(items){if(!items||!items.length)return '';return `<section class="card"><h2 class="sectionTitle">관련성경</h2><div class="listFlow">${items.map(x=>`<div class="step">${esc(x)}</div>`).join('')}</div></section>`}
-function renderMessage(msg){if(!msg)return '';return `<section class="messageBox"><b>핵심메시지</b><p>${esc(msg)}</p></section>`}
-function renderTabs(){ $('tabs').innerHTML=HUBS.map(h=>`<a class="tab ${h.slug===slug?'active':''}" href="?hub=${h.slug}">${esc(h.title.replace(' 허브',''))}</a>`).join('') }
-function renderHubList(){ $('hubList').innerHTML=HUBS.map((h,i)=>`<a class="hubItem ${h.slug===slug?'active':''}" href="?hub=${h.slug}"><b>${i+1}. ${esc(h.title)}</b><span>${esc(h.year)} · ${esc(h.short)}</span></a>`).join('') }
-function renderHeader(h){$('kicker').textContent=h.kicker||h.order||'';$('title').textContent=h.heroTitle||h.title;$('subtitle').textContent=h.heroText||h.subtitle||'';$('tags').innerHTML=(h.tags||[]).map(t=>`<span>${esc(t)}</span>`).join('')}
-function renderHub(h){return `
-<section class="card"><h2 class="sectionTitle">한눈에 보기</h2><div class="summaryGrid">${(h.summary||[]).map(x=>`<div class="mini"><b>${esc(x[0])}</b><span>${esc(x[1])}</span></div>`).join('')}</div></section>
-<section class="card"><h2 class="sectionTitle">${esc(h.mainFlowTitle||'핵심 흐름')}</h2><div class="flow">${nodes(h.mainFlow||h.flow||[])}</div></section>
-<section class="card"><h2 class="sectionTitle">${esc(h.mapTitle||'허브지도')}</h2><div class="mapWrap"><img src="${esc(h.map)}" alt="${esc(h.mapTitle||'허브 지도')}"><div class="caption">${esc(h.mapCaption)}</div></div></section>
-${renderVerse(h.verse)}
-${renderList('핵심사건',h.events)}
-${renderPeople(h.people)}
-${renderCards('핵심의미',h.meaning)}
-${renderCards('연결탐험',h.connections)}
-${renderCards('통합탐험',h.integration)}
-${renderBible(h.bible)}
-${renderMessage(h.message)}
-${renderCards('핵심 요소',h.keyItems)}
-<section class="card"><h2 class="sectionTitle">전체 흐름 한눈에 보기</h2><div class="flow">${nodes(h.overviewFlow||[])}</div></section>
-<section class="card"><h2 class="sectionTitle">연대 흐름</h2><div class="timeline">${(h.timeline||[]).map(x=>`<div class="t ${x.active||x[2]?'active':''}"><strong>${esc(x.year||x[0])}</strong><span>${esc(x.label||x[1])}</span></div>`).join('')}</div></section>
-${h.note?`<div class="note">${esc(h.note)}</div>`:''}
-<div class="actions"><a class="action secondary" href="${hrefFor(h,'prev')}">${labelFor(h,'prev')}</a><a class="action primary" href="${hrefFor(h,'next')}">${labelFor(h,'next')}</a></div>`}
-function render(){const h=HUBS.find(x=>x.slug===slug)||HUBS[0];slug=h.slug;renderTabs();renderHeader(h);renderHubList();$('content').innerHTML=renderHub(h);$('prevBottom').href=hrefFor(h,'prev');$('prevBottom').textContent=labelFor(h,'prev');$('nextBottom').href=hrefFor(h,'next');$('nextBottom').textContent=labelFor(h,'next')}
-async function init(){const res=await fetch('data/hubs.json?v=return95-standard-v2');const data=await res.json();HUBS=data.hubs||[];slug=slug||data.defaultHub||(HUBS[0]&&HUBS[0].slug);render()}
-$('hubListBtn').onclick=()=>$('drawer').classList.add('show');$('hubBottom').onclick=()=>$('drawer').classList.add('show');$('drawerClose').onclick=()=>$('drawer').classList.remove('show');$('drawer').onclick=e=>{if(e.target.id==='drawer')$('drawer').classList.remove('show')};
-if('serviceWorker'in navigator){navigator.serviceWorker.register('./sw.js').catch(()=>{})}
-init();
-</script>
+  <header class="topbar">
+    <button class="back" id="backBtn">←</button>
+    <div class="titlebox">
+      <b id="appTitle">CEN Hub</b>
+      <span id="appSub">분열왕국 핵심사건 확장탐험</span>
+    </div>
+    <button class="menu" id="hubListBtn">허브</button>
+  </header>
+
+  <main class="wrap">
+    <section class="hero" id="hero"></section>
+
+    <section class="section" id="mainFlowSection">
+      <h2 id="flowTitle">핵심 흐름</h2>
+      <div class="card flow" id="mainFlow"></div>
+    </section>
+
+    <section class="section" id="mapSection">
+      <h2 id="mapTitle">지도</h2>
+      <div class="card mapCard">
+        <img id="mapImg" alt="허브 지도">
+        <p id="mapCaption"></p>
+      </div>
+    </section>
+
+    <section class="section optional" id="verseSection">
+      <h2>대표성구</h2>
+      <div class="card verseCard" id="verse"></div>
+    </section>
+
+    <section class="section" id="keyItemsSection">
+      <h2>핵심 요소</h2>
+      <div class="infoGrid" id="keyItems"></div>
+    </section>
+
+    <section class="section" id="overviewFlowSection">
+      <h2>전체 흐름 한눈에 보기</h2>
+      <div class="card flow" id="overviewFlow"></div>
+    </section>
+
+    <section class="section optional" id="eventsSection">
+      <h2>핵심사건</h2>
+      <div class="card proseCard" id="events"></div>
+    </section>
+
+    <section class="section optional" id="meaningSection">
+      <h2>핵심의미</h2>
+      <div class="card proseCard" id="meaning"></div>
+    </section>
+
+    <section class="section" id="linksSection">
+      <h2>연결탐험</h2>
+      <div class="links" id="links"></div>
+    </section>
+
+    <section class="section optional" id="integrationSection">
+      <h2>통합탐험</h2>
+      <div class="card proseCard" id="integration"></div>
+    </section>
+
+    <section class="section optional" id="bibleSection">
+      <h2>관련성경</h2>
+      <div class="card bibleCard" id="bible"></div>
+    </section>
+
+    <section class="section optional" id="messageSection">
+      <h2>핵심메시지</h2>
+      <div class="card messageCard" id="message"></div>
+    </section>
+  </main>
+
+  <nav class="bottom">
+    <button id="prevBtn">이전 허브</button>
+    <button id="matrixBtn">Matrix</button>
+    <button id="nextBtn">다음 허브</button>
+  </nav>
+
+  <div class="drawer" id="drawer">
+    <div class="drawerPanel">
+      <div class="drawerHead"><b>허브 목록</b><button id="drawerClose">×</button></div>
+      <div id="hubList"></div>
+    </div>
+  </div>
+  <script src="js/app.js?v=galmel-standard-2"></script>
 </body>
 </html>

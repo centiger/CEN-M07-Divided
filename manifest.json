@@ -1,10 +1,11 @@
 {
-  "name": "CEN Matrix 포로귀환",
-  "short_name": "포로귀환 Matrix",
+  "name": "CEN-Matrix 분열왕국 허브 연결판",
+  "short_name": "CEN-Matrix",
   "start_url": "./index.html",
+  "scope": "./",
   "display": "standalone",
-  "background_color": "#f4fbf8",
-  "theme_color": "#236B63",
+  "background_color": "#f6efe4",
+  "theme_color": "#132235",
   "icons": [
     {
       "src": "icons/icon-192.png",
