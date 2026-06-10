@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-<title>CEN-Matrix 상세판</title>
+<title>CEN Bible 분열왕국 Matrix</title>
 <link rel="manifest" href="manifest.json">
 <meta name="theme-color" content="#132235">
 <style>
@@ -309,6 +309,13 @@ html,body{
   text-align:center !important;
 }
 
+
+/* matrix review fixes: chronological accuracy and footer hub navigation */
+.plot.view.southKings .bar{font-size:9.2px !important;padding:0 3px !important;}
+.plot.view.southKings .bar.pin-top::after,.plot.view.southKings .bar.pin-bottom::after{font-size:9px !important;}
+.action{cursor:pointer;}
+.menuBtn{cursor:pointer;}
+
 </style>
 
 <style id="cen-divided-matrix-enhance-v1">
@@ -376,7 +383,7 @@ html,body{
   <div class="headerTop">
     <button class="menuBtn">☰</button>
     <div class="brand">
-      <b>CEN‑Matrix</b>
+      <b>분열왕국 Matrix</b>
       <span>성경 시대별 총람</span>
     </div>
     <div class="period">BC 930 ~ BC 586</div>
@@ -437,23 +444,29 @@ html,body{
 </div>
 
 <div class="left rowLabel labelSouth view southKings">남유다<br>왕</div>
-<div class="plot view southKings" style="height:66px">
-  <div class="grid" style="left:4%"></div><div class="grid" style="left:16%"></div><div class="grid" style="left:27%"></div><div class="grid" style="left:39%"></div><div class="grid" style="left:53%"></div><div class="grid" style="left:58%"></div><div class="grid" style="left:77%"></div><div class="grid" style="left:94%"></div>
+<div class="plot view southKings" style="height:88px">
+  <div class="grid" style="left:4.00%"></div><div class="grid" style="left:17.08%"></div><div class="grid" style="left:30.16%"></div><div class="grid" style="left:43.24%"></div><div class="grid" style="left:58.42%"></div><div class="grid" style="left:63.91%"></div><div class="grid" style="left:84.58%"></div><div class="grid" style="left:94.00%"></div>
 
-  <div class="bar southBar" data-title="르호보암" data-info="연대: BC 930~913" style="left:4%;top:24px;width:7%">르호보암</div>
-  <div class="bar southBar pin-top south-pin" data-display-name="아비야" data-title="아비야" data-info="연대: BC 913~911 (단 3년)" style="left:11%;top:24px;width:2%">아비야</div>
-  <div class="bar southBar" data-title="아사" data-info="연대: BC 911~870" style="left:13%;top:24px;width:14%">아사</div>
-  <div class="bar southBar" data-title="여호사밧" data-info="연대: BC 870~848" style="left:27%;top:24px;width:8%">여호사밧</div>
-  <div class="bar southBar" data-title="여호람" data-info="연대: BC 848~841" style="left:35%;top:24px;width:4.5%">여호람</div>
-  <div class="bar southBar pin-top south-pin" data-display-name="아하시야" data-title="아하시야" data-info="연대: BC 841 (단 1년)" style="left:39.5%;top:24px;width:1%">아하시야</div>
-  <div class="bar southBar pin-bottom south-pin" data-display-name="아달랴" data-title="아달랴" data-info="연대: BC 841~835" style="left:40.5%;top:24px;width:2.5%">아달랴</div>
-  <div class="bar southBar" data-title="요아스" data-info="연대: BC 835~796" style="left:43%;top:24px;width:12%">요아스</div>
-  <div class="bar southBar" data-title="아마샤" data-info="연대: BC 796~767" style="left:55%;top:24px;width:10%">아마샤</div>
-  <div class="bar southBar" data-title="웃시야" data-info="연대: BC 792~740" style="left:65%;top:24px;width:14%">웃시야</div>
-  <div class="bar southBar" data-title="요담" data-info="연대: BC 750~732" style="left:79%;top:24px;width:6%">요담</div>
-  <div class="bar southBar" data-title="아하스" data-info="연대: BC 735~716" style="left:85%;top:24px;width:6%">아하스</div>
-  <div class="bar southBar" data-title="히스기야" data-info="연대: BC 716~687" style="left:91%;top:24px;width:5%">히스기야</div>
-  <div class="bar southBar" data-title="말기 왕들" data-info="므낫세 ~ 시드기야" style="left:96%;top:24px;width:3.5%">말기</div>
+  <div class="bar southBar" data-title="르호보암" data-info="연대: BC 930~913" style="left:4.00%;top:34px;width:4.45%">르호보암</div>
+  <div class="bar southBar pin-top south-pin" data-display-name="아비야" data-title="아비야" data-info="연대: BC 913~911" style="left:8.45%;top:34px;width:0.85%">아비야</div>
+  <div class="bar southBar" data-title="아사" data-info="연대: BC 911~870" style="left:8.97%;top:34px;width:10.73%">아사</div>
+  <div class="bar southBar" data-title="여호사밧" data-info="연대: BC 873~848" style="left:18.91%;top:12px;width:6.54%">여호사밧</div>
+  <div class="bar southBar" data-title="여호람" data-info="연대: BC 853~841" style="left:24.15%;top:34px;width:3.14%">여호람</div>
+  <div class="bar southBar pin-top south-pin" data-display-name="아하시야" data-title="아하시야" data-info="연대: BC 841" style="left:27.28%;top:34px;width:0.85%">아하시야</div>
+  <div class="bar southBar pin-bottom south-pin" data-display-name="아달랴" data-title="아달랴" data-info="연대: BC 841~835" style="left:27.28%;top:34px;width:1.57%">아달랴</div>
+  <div class="bar southBar" data-title="요아스" data-info="연대: BC 835~796" style="left:28.85%;top:34px;width:10.20%">요아스</div>
+  <div class="bar southBar" data-title="아마샤" data-info="연대: BC 796~767" style="left:39.06%;top:34px;width:7.59%">아마샤</div>
+  <div class="bar southBar" data-title="웃시야" data-info="연대: BC 792~740" style="left:40.10%;top:56px;width:13.60%">웃시야</div>
+  <div class="bar southBar" data-title="요담" data-info="연대: BC 750~732" style="left:51.09%;top:12px;width:4.71%">요담</div>
+  <div class="bar southBar" data-title="아하스" data-info="연대: BC 735~716" style="left:55.02%;top:34px;width:4.97%">아하스</div>
+  <div class="bar southBar" data-title="히스기야" data-info="연대: BC 716~687" style="left:59.99%;top:34px;width:7.59%">히스기야</div>
+  <div class="bar southBar" data-title="므낫세" data-info="연대: BC 687~643" style="left:67.58%;top:34px;width:11.51%">므낫세</div>
+  <div class="bar southBar pin-top south-pin" data-display-name="아몬" data-title="아몬" data-info="연대: BC 643~641" style="left:79.09%;top:34px;width:0.85%">아몬</div>
+  <div class="bar southBar" data-title="요시야" data-info="연대: BC 641~609" style="left:79.61%;top:34px;width:8.37%">요시야</div>
+  <div class="bar southBar pin-top south-pin" data-display-name="여호아하스" data-title="여호아하스" data-info="연대: BC 609" style="left:87.98%;top:34px;width:0.85%">여호아하스</div>
+  <div class="bar southBar" data-title="여호야김" data-info="연대: BC 609~598" style="left:87.98%;top:56px;width:2.88%">여호야김</div>
+  <div class="bar southBar pin-top south-pin" data-display-name="여호야긴" data-title="여호야긴" data-info="연대: BC 598~597" style="left:90.86%;top:34px;width:0.85%">여호야긴</div>
+  <div class="bar southBar" data-title="시드기야" data-info="연대: BC 597~586, 남유다 마지막 왕" style="left:91.12%;top:56px;width:2.88%">시드기야</div>
 </div>
 
 <div class="left rowLabel labelProphets view prophets">선지자</div>
@@ -475,21 +488,21 @@ html,body{
 
 <div class="left rowLabel labelNations view nations">주변국</div>
 <div class="plot view nations" style="height:190px">
-  <div class="grid" style="left:4%"></div><div class="grid" style="left:16%"></div><div class="grid" style="left:27%"></div><div class="grid" style="left:39%"></div><div class="grid" style="left:53%"></div><div class="grid" style="left:58%"></div><div class="grid" style="left:77%"></div><div class="grid" style="left:94%"></div>
+  <div class="grid" style="left:4.00%"></div><div class="grid" style="left:17.08%"></div><div class="grid" style="left:30.16%"></div><div class="grid" style="left:43.24%"></div><div class="grid" style="left:58.42%"></div><div class="grid" style="left:63.91%"></div><div class="grid" style="left:84.58%"></div><div class="grid" style="left:94.00%"></div>
 
-  <div class="bar nationBar" data-title="애굽 (이집트)" data-info="지속적인 대외 영향력 행사" style="left:1%;top:10px;width:96%"><span class="scroll-label">애굽 (이집트)</span></div>
-  <div class="bar nationBar" data-title="아람 (시리아)" data-info="북이스라엘과 밀고 당기는 국경 전쟁" style="left:18%;top:32px;width:45%"><span class="scroll-label">아람 (시리아)</span></div>
-  <div class="bar nationBar" data-title="두로·시돈 (레바논)" data-info="이세벨, 바알 문화 유입 통로" style="left:24%;top:54px;width:28%"><span class="scroll-label">두로·시돈 (레바논)</span></div>
-  <div class="bar nationBar" data-title="모압 (요르단)" data-info="이스라엘 및 유다와 영토 갈등" style="left:32%;top:76px;width:52%"><span class="scroll-label">모압 (요르단)</span></div>
-  <div class="bar nationBar" data-title="암몬 (요르단)" data-info="요르단 암만 지역 배경" style="left:32%;top:98px;width:54%"><span class="scroll-label">암몬 (요르단)</span></div>
-  <div class="bar nationBar" data-title="에돔 (요르단 남부)" data-info="요르단 남부 무역로 갈등" style="left:34%;top:120px;width:56%"><span class="scroll-label">에돔 (요르단 남부)</span></div>
-  <div class="bar nationBar" data-title="앗수르 (이라크 북부)" data-info="북이스라엘을 멸망시킨 제국" style="left:58%;top:142px;width:30%"><span class="scroll-label">앗수르 (이라크 북부)</span></div>
-  <div class="bar nationBar" data-title="바벨론 (이라크)" data-info="남유다 예루살렘을 함락시킨 제국" style="left:86%;top:164px;width:12%"><span class="scroll-label">바벨론 (이라크)</span></div>
+  <div class="bar nationBar" data-title="애굽 (이집트)" data-info="분열왕국 전 기간에 걸쳐 유다와 이스라엘 주변 정세에 영향" style="left:4.00%;top:10px;width:90.00%"><span class="scroll-label">애굽 (이집트)</span></div>
+  <div class="bar nationBar" data-title="아람 (시리아)" data-info="북이스라엘과 지속적으로 충돌한 북방 세력" style="left:4.00%;top:32px;width:51.80%"><span class="scroll-label">아람 (시리아)</span></div>
+  <div class="bar nationBar" data-title="두로·시돈 (레바논)" data-info="이세벨과 바알 문화 유입의 배경이 된 해안 세력" style="left:18.65%;top:54px;width:39.77%"><span class="scroll-label">두로·시돈 (레바논)</span></div>
+  <div class="bar nationBar" data-title="모압 (요르단)" data-info="이스라엘 및 유다와 영토·조공 갈등을 겪은 동쪽 세력" style="left:24.93%;top:76px;width:63.05%"><span class="scroll-label">모압 (요르단)</span></div>
+  <div class="bar nationBar" data-title="암몬 (요르단)" data-info="요단 동편에서 유다 말기까지 영향을 준 세력" style="left:32.78%;top:98px;width:58.34%"><span class="scroll-label">암몬 (요르단)</span></div>
+  <div class="bar nationBar" data-title="에돔 (요르단 남부)" data-info="남유다와 남방 무역로를 두고 갈등한 세력" style="left:35.40%;top:120px;width:58.60%"><span class="scroll-label">에돔 (요르단 남부)</span></div>
+  <div class="bar nationBar" data-title="앗수르 (이라크 북부)" data-info="북이스라엘을 멸망시키고 남유다를 압박한 제국" style="left:52.40%;top:142px;width:34.80%"><span class="scroll-label">앗수르 (이라크 북부)</span></div>
+  <div class="bar nationBar" data-title="바벨론 (이라크)" data-info="남유다 예루살렘을 함락시키고 포로기를 연 제국" style="left:83.53%;top:164px;width:10.47%"><span class="scroll-label">바벨론 (이라크)</span></div>
 </div>
 
 <div class="left rowLabel labelEvents view events">핵심<br>사건</div>
 <div class="plot view events" style="height:188px">
-  <div class="grid" style="left:4%"></div><div class="grid" style="left:16%"></div><div class="grid" style="left:27%"></div><div class="grid" style="left:39%"></div><div class="grid" style="left:53%"></div><div class="grid" style="left:58%"></div><div class="grid" style="left:77%"></div><div class="grid" style="left:94%"></div>
+  <div class="grid" style="left:4.00%"></div><div class="grid" style="left:17.08%"></div><div class="grid" style="left:30.16%"></div><div class="grid" style="left:43.24%"></div><div class="grid" style="left:58.42%"></div><div class="grid" style="left:63.91%"></div><div class="grid" style="left:84.58%"></div><div class="grid" style="left:94.00%"></div>
 
   <div class="dot" data-title="왕국 분열" data-info="연도: BC 930&#10;솔로몬 사후 남북 왕국 분열" style="left:4.00%;top:16px"></div>
   <div class="eventText" style="left:4.00%;top:32px">BC930<br>왕국분열</div>
@@ -545,7 +558,7 @@ html,body{
   <button class="action">성경연대기</button>
   <button class="action">연결탐험</button>
   <button class="action">한눈에 성경</button>
-  <button class="action">핵심 사건</button>
+  <button class="action">허브</button>
 </footer>
 
 <div class="modal" id="modal">
@@ -646,7 +659,7 @@ window.addEventListener('resize', updateStickyLabels);
 setTimeout(updateStickyLabels, 100);
 
 if('serviceWorker' in navigator){
-  navigator.serviceWorker.register('./sw.js').catch(()=>{});
+  navigator.serviceWorker.register('./sw.js?v=matrix-review-20260610').catch(()=>{});
 }
 </script>
 
@@ -665,7 +678,7 @@ if('serviceWorker' in navigator){
     {no:'⑤', title:'예루살렘 함락', sub:'성전 파괴와 포로', url:'hubs/index.html?hub=jerusalem-fall'}
   ];
   function openHubList(){
-    mt.textContent = '분열왕국 핵심 사건';
+    mt.textContent = '분열왕국 허브 목록';
     mb.innerHTML = '<div class="hubListModal">' + hubItems.map(h =>
       `<button type="button" data-hub-url="${h.url}">${h.no} ${h.title}<span>${h.sub}</span></button>`
     ).join('') + '</div>';
@@ -681,7 +694,7 @@ if('serviceWorker' in navigator){
     const btn = e.target.closest('footer.actions .action');
     if(!btn) return;
     const label = (btn.textContent || '').trim();
-    if(label === '핵심 사건'){
+    if(label === '허브'){
       e.preventDefault();
       e.stopPropagation();
       openHubList();
@@ -693,6 +706,14 @@ if('serviceWorker' in navigator){
     e.stopPropagation();
     window.open(url, '_self');
   }, true);
+
+  const menuButton=document.querySelector('.menuBtn');
+  if(menuButton){
+    menuButton.addEventListener('click', function(e){
+      e.preventDefault();
+      openHubList();
+    });
+  }
 })();
 </script>
 
