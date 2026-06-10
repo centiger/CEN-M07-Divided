@@ -4,7 +4,7 @@ const $=id=>document.getElementById(id);
 const params=new URLSearchParams(location.search);
 
 async function loadData(){
-  const res=await fetch('data/hubs.json?v=galmel-standard-2',{cache:'no-store'});
+  const res=await fetch('data/hubs.json?v=flow-fix-20260610',{cache:'no-store'});
   const data=await res.json();
   HUBS=data.hubs||[];
   const slug=params.get('hub')||data.defaultHub||(HUBS[0]&&HUBS[0].slug);
@@ -26,8 +26,20 @@ function setOptional(sectionId, contentId, value, renderer){
 }
 
 function formatText(v){
-  if(Array.isArray(v)) return `<ul class="cleanList">${v.map(x=>`<li>${escapeHtml(String(x))}</li>`).join('')}</ul>`;
-  return escapeHtml(String(v)).replace(/\n/g,'<br>');
+  if(Array.isArray(v)) return `<ul class="cleanList">${v.map(x=>`<li>${formatInline(x)}</li>`).join('')}</ul>`;
+  return escapeHtml(formatInline(v)).replace(/\n/g,'<br>');
+}
+
+function formatInline(v){
+  if(v===null||v===undefined) return '';
+  if(typeof v==='object'){
+    const main=v.title||v.label||v.name||v.text||v.content||'';
+    const sub=v.desc||v.description||v.detail||'';
+    const icon=v.icon?`${v.icon} `:'';
+    if(main||sub) return icon + main + (sub?` - ${sub}`:'');
+    return Object.values(v).filter(x=>typeof x!=='object').join(' - ');
+  }
+  return String(v);
 }
 
 function escapeHtml(s){
@@ -67,7 +79,7 @@ function renderHub(slug){
 
 function renderListOrFlow(value){
   if(Array.isArray(value)) return formatText(value);
-  const parts=String(value).split('→').map(s=>s.trim()).filter(Boolean);
+  const parts=formatInline(value).split('→').map(s=>s.trim()).filter(Boolean);
   if(parts.length>1){
     return `<div class="arrowFlow">${parts.map(p=>`<span>${escapeHtml(p)}</span>`).join('<b>→</b>')}</div>`;
   }
@@ -106,5 +118,5 @@ $('backBtn').onclick=()=>openUrl('../index.html');
 $('hubListBtn').onclick=()=>$('drawer').classList.add('show');
 $('drawerClose').onclick=()=>$('drawer').classList.remove('show');
 $('drawer').onclick=e=>{if(e.target.id==='drawer')$('drawer').classList.remove('show')};
-if('serviceWorker'in navigator)navigator.serviceWorker.register('./sw.js?v=galmel-standard-2').catch(()=>{});
+if('serviceWorker'in navigator)navigator.serviceWorker.register('./sw.js?v=flow-fix-20260610').catch(()=>{});
 loadData();
