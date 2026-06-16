@@ -51,7 +51,18 @@ function renderHub(slug){
   if(!current)return;
   $('appTitle').textContent=current.title;
   $('appSub').textContent=current.subtitle||'분열왕국 핵심사건 확장탐험';
-  $('hero').innerHTML=`${current.kicker?`<div class="kicker">${escapeHtml(current.kicker)}</div>`:''}<h1>${escapeHtml(current.heroTitle||current.title)}</h1><p>${formatText(current.heroText||'')}</p><div class="tags">${(current.tags||[]).map(t=>`<span>${escapeHtml(t)}</span>`).join('')}</div>`;
+  $('hero').innerHTML=`
+${current.kicker?`<div class="kicker">${escapeHtml(current.kicker)}</div>`:''}
+${current.question?`
+<div class="questionCard">
+  <div class="qMark">❓ 핵심 질문</div>
+  <div class="qText">${escapeHtml(current.question)}</div>
+  <div class="oneLine">💡 ${escapeHtml(current.oneLine||'')}</div>
+</div>
+`:''}
+<h1>${escapeHtml(current.heroTitle||current.title)}</h1>
+<p>${formatText(current.heroText||'')}</p>
+<div class="tags">${(current.tags||[]).map(t=>`<span>${escapeHtml(t)}</span>`).join('')}</div>`;
 
   $('flowTitle').textContent=current.mainFlowTitle||'핵심 흐름';
   $('mainFlow').innerHTML=nodes(current.mainFlow||[]);
