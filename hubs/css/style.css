@@ -16,7 +16,8 @@
 .messageCard,.messageCard *{color:#fff !important}
 .messageCard .messageStrong{color:#fff !important;text-shadow:0 1px 2px rgba(0,0,0,.28)}
 
-/* CEN 3.0 Question Card */
+
+/* CEN 3.0 Question Card + Explore Card */
 .questionCard{
   background:linear-gradient(135deg,#17304a,#24425f);
   color:#fff;
@@ -26,26 +27,18 @@
   border:1px solid rgba(255,255,255,.15);
   box-shadow:0 4px 12px rgba(0,0,0,.12);
 }
-.questionCard *{color:inherit}
-.qMark{
-  font-size:11px;
-  font-weight:900;
-  opacity:.85;
-  margin-bottom:6px;
-}
-.qText{
-  font-size:18px;
-  font-weight:950;
-  line-height:1.45;
-  margin-bottom:10px;
-  word-break:keep-all;
-}
-.oneLine{
-  background:rgba(255,255,255,.08);
-  border-radius:10px;
-  padding:8px 10px;
-  font-size:12px;
-  line-height:1.5;
-  color:#f7d87b !important;
-  font-weight:900;
-}
+.qMark{font-size:11px;font-weight:900;opacity:.85;margin-bottom:6px;letter-spacing:.3px}
+.qText{font-size:18px;font-weight:950;line-height:1.45;margin-bottom:10px;word-break:keep-all}
+.oneLine{background:rgba(255,255,255,.08);border-radius:10px;padding:8px 10px;font-size:12px;line-height:1.5;color:#f7d87b;font-weight:900}
+.exploreBox{display:grid;gap:12px}
+.exploreSummary{background:#fffdf6;border:1px solid #e1cfaa;border-radius:14px;padding:12px;font-size:13px;line-height:1.7;font-weight:850;color:#4b3822;word-break:keep-all}
+.exploreFlowTitle{display:inline-block;justify-self:start;background:#24425f;color:#fff;border-radius:999px;padding:6px 10px;font-size:11px;font-weight:950}
+.exploreFlow{display:grid;gap:7px}
+.exploreNode{display:flex;align-items:center;gap:10px;background:#f2ead7;border:1px solid #d1bb92;border-radius:15px;padding:10px 11px}
+.exploreIcon{width:34px;height:34px;flex:0 0 34px;border-radius:12px;background:#fff8e8;border:1px solid #d1bb92;display:flex;align-items:center;justify-content:center;font-size:20px}
+.exploreNode b{display:block;color:#17304a;font-size:13px;margin-bottom:2px}
+.exploreNode span{display:block;color:#6d5b40;font-size:11.5px;font-weight:850;line-height:1.35}
+.flowArrow{text-align:center;color:#9d7a46;font-size:17px;font-weight:950;line-height:1}
+.thinkBox{background:linear-gradient(135deg,#fff8e8,#f2ead7);border:1px solid #d1bb92;border-radius:15px;padding:12px;color:#4b3822}
+.thinkBox b{display:block;color:#17304a;margin-bottom:6px;font-size:13px}
+.thinkBox p{margin:0;font-size:13px;line-height:1.65;font-weight:850;white-space:pre-line;word-break:keep-all}
