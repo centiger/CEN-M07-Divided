@@ -42,3 +42,31 @@
 .thinkBox{background:linear-gradient(135deg,#fff8e8,#f2ead7);border:1px solid #d1bb92;border-radius:15px;padding:12px;color:#4b3822}
 .thinkBox b{display:block;color:#17304a;margin-bottom:6px;font-size:13px}
 .thinkBox p{margin:0;font-size:13px;line-height:1.65;font-weight:850;white-space:pre-line;word-break:keep-all}
+
+
+/* M07 v4: 연결탐험 영역에 탐험 카드 배치 */
+.links .exploreBox{
+  grid-column:1/-1;
+  width:100%;
+}
+.links .exploreSummary,
+.links .thinkBox{
+  width:100%;
+}
+.links .exploreFlow{
+  width:100%;
+}
+
+/* 통합탐험/연결탐험 카드 정갈화 */
+.exploreSummary{
+  border-radius:15px;
+}
+.exploreNode{
+  border-radius:15px;
+}
+.exploreIcon{
+  border-radius:12px;
+}
+.thinkBox{
+  border-radius:15px;
+}
