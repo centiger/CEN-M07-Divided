@@ -58,8 +58,7 @@ ${current.question?`
   <div class="qMark">❓ 핵심 질문</div>
   <div class="qText">${escapeHtml(current.question)}</div>
   <div class="oneLine">💡 ${escapeHtml(current.oneLine||'')}</div>
-</div>
-`:''}
+</div>`:''}
 <h1>${escapeHtml(current.heroTitle||current.title)}</h1>
 <p>${formatText(current.heroText||'')}</p>
 <div class="tags">${(current.tags||[]).map(t=>`<span>${escapeHtml(t)}</span>`).join('')}</div>`;
@@ -77,8 +76,8 @@ ${current.question?`
   $('overviewFlow').innerHTML=nodes(current.overviewFlow||[]);
 
   setOptional('eventsSection','events',current.events, renderListOrFlow);
-  setOptional('meaningSection','meaning',current.meaning);
-  setOptional('integrationSection','integration',current.integration);
+  setOptional('meaningSection','meaning',current.meaning, renderExplore);
+  setOptional('integrationSection','integration',current.integration, renderExplore);
   setOptional('bibleSection','bible',current.bible);
   setOptional('messageSection','message',current.message, v=>`<div class="messageStrong">${formatText(v)}</div>`);
 
@@ -86,6 +85,27 @@ ${current.question?`
   $('links').innerHTML=(current.links||[]).map((l,i)=>`<button class="${i===1?'primary':''}" data-url="${l.url||''}" data-hub="${l.hub||''}">${escapeHtml(l.label||'')}</button>`).join('');
   $('prevBtn').textContent=current.prevLabel||'이전 허브';
   $('nextBtn').textContent=current.nextLabel||'다음 허브';
+}
+
+function renderExplore(value){
+  if(value && typeof value==='object' && !Array.isArray(value) && (value.summary || value.flow || value.thought)){
+    const flow = Array.isArray(value.flow) ? value.flow : [];
+    return `<div class="exploreBox">
+      ${value.summary?`<div class="exploreSummary">${formatText(value.summary)}</div>`:''}
+      ${flow.length?`
+        <div class="exploreFlowTitle">${escapeHtml(value.flowTitle||'연결 흐름')}</div>
+        <div class="exploreFlow">
+          ${flow.map((item,idx)=>`
+            ${idx?'<div class="flowArrow">↓</div>':''}
+            <div class="exploreNode">
+              <div class="exploreIcon">${escapeHtml(item.icon||'•')}</div>
+              <div><b>${escapeHtml(item.title||'')}</b><span>${escapeHtml(item.text||'')}</span></div>
+            </div>`).join('')}
+        </div>`:''}
+      ${value.thought?`<div class="thinkBox"><b>🤔 생각해보기</b><p>${formatText(value.thought)}</p></div>`:''}
+    </div>`;
+  }
+  return renderListOrFlow(value);
 }
 
 function renderListOrFlow(value){
