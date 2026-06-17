@@ -76,13 +76,21 @@ ${current.question?`
   $('overviewFlow').innerHTML=nodes(current.overviewFlow||[]);
 
   setOptional('eventsSection','events',current.events, renderListOrFlow);
-  setOptional('meaningSection','meaning',current.meaning, renderExplore);
+  if(current.meaning && typeof current.meaning==='object' && !Array.isArray(current.meaning) && (current.meaning.summary || current.meaning.flow || current.meaning.thought)){
+    setOptional('meaningSection','meaning',null);
+  }else{
+    setOptional('meaningSection','meaning',current.meaning, renderExplore);
+  }
   setOptional('integrationSection','integration',current.integration, renderExplore);
   setOptional('bibleSection','bible',current.bible);
   setOptional('messageSection','message',current.message, v=>`<div class="messageStrong">${formatText(v)}</div>`);
 
   if($('timeline')) $('timeline').innerHTML=(current.timeline||[]).map(t=>`<div class="t ${t.active?'active':''}">${escapeHtml(t.year||'')}<div class="dot"></div>${escapeHtml(t.label||'')}</div>`).join('');
-  $('links').innerHTML=(current.links||[]).map((l,i)=>`<button class="${i===1?'primary':''}" data-url="${l.url||''}" data-hub="${l.hub||''}">${escapeHtml(l.label||'')}</button>`).join('');
+  if(current.meaning && typeof current.meaning==='object' && !Array.isArray(current.meaning) && (current.meaning.summary || current.meaning.flow || current.meaning.thought)){
+    $('links').innerHTML=renderExplore(current.meaning);
+  }else{
+    $('links').innerHTML=(current.links||[]).map((l,i)=>`<button class="${i===1?'primary':''}" data-url="${l.url||''}" data-hub="${l.hub||''}">${escapeHtml(l.label||'')}</button>`).join('');
+  }
   $('prevBtn').textContent=current.prevLabel||'이전 허브';
   $('nextBtn').textContent=current.nextLabel||'다음 허브';
 }
