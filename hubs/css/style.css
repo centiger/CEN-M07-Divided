@@ -124,3 +124,20 @@
   font-weight:780!important;
   word-break:keep-all!important;
 }
+
+
+/* v37 width fix */
+.exploreGrid,
+#links,
+#integration{
+  display:grid !important;
+  grid-template-columns:1fr !important;
+  width:100% !important;
+}
+
+.exploreCard{
+  width:100% !important;
+  max-width:100% !important;
+  display:block !important;
+  box-sizing:border-box !important;
+}
