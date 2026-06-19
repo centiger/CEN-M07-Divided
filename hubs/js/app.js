@@ -4,7 +4,7 @@ const $=id=>document.getElementById(id);
 const params=new URLSearchParams(location.search);
 
 async function loadData(){
-  const res=await fetch('data/hubs.json?verse-fix-20260610',{cache:'no-store'});
+  const res=await fetch('data/hubs.json?v=m07-v36-actual-fixed',{cache:'no-store'});
   const data=await res.json();
   HUBS=data.hubs||[];
   const slug=params.get('hub')||data.defaultHub||(HUBS[0]&&HUBS[0].slug);
@@ -81,13 +81,13 @@ ${current.question?`
   }else{
     setOptional('meaningSection','meaning',current.meaning, renderExplore);
   }
-  setOptional('integrationSection','integration',current.integration, renderExplore);
+  setOptional('integrationSection','integration',current.integration ? buildIntegrationExplore(current) : null, renderExplore);
   setOptional('bibleSection','bible',current.bible);
   setOptional('messageSection','message',current.message, v=>`<div class="messageStrong">${formatText(v)}</div>`);
 
   if($('timeline')) $('timeline').innerHTML=(current.timeline||[]).map(t=>`<div class="t ${t.active?'active':''}">${escapeHtml(t.year||'')}<div class="dot"></div>${escapeHtml(t.label||'')}</div>`).join('');
   if(current.meaning && typeof current.meaning==='object' && !Array.isArray(current.meaning) && (current.meaning.summary || current.meaning.flow || current.meaning.thought)){
-    $('links').innerHTML=renderExplore(current.meaning);
+    $('links').innerHTML=renderExplore(buildConnectionExplore(current));
   }else{
     $('links').innerHTML=(current.links||[]).map((l,i)=>`<button class="${i===1?'primary':''}" data-url="${l.url||''}" data-hub="${l.hub||''}">${escapeHtml(l.label||'')}</button>`).join('');
   }
@@ -95,15 +95,17 @@ ${current.question?`
   $('nextBtn').textContent=current.nextLabel||'다음 허브';
 }
 
-function renderExplore(items){
-  const escapeLocal = (s) => String(s ?? '').replace(/[&<>"']/g, m => ({
-    '&':'&amp;', '<':'&lt;', '>':'&gt;', '"':'&quot;', "'":'&#39;'
-  }[m]));
-
-  const hasEmoji = (s) => /[\u{1F300}-\u{1FAFF}\u{2600}-\u{27BF}]/u.test(String(s||''));
-
+function renderExplore(value){
+  function escapeLocal(s){
+    return String(s ?? '').replace(/[&<>"']/g, m => ({
+      '&':'&amp;', '<':'&lt;', '>':'&gt;', '"':'&quot;', "'":'&#39;'
+    }[m]));
+  }
+  function hasEmoji(s){
+    return /[\u{1F300}-\u{1FAFF}\u{2600}-\u{27BF}]/u.test(String(s||''));
+  }
   function iconForStep(step){
-    const t = String(step||'');
+    const t=String(step||'');
     if(/왕국분열|분열|르호보암|여로보암/.test(t)) return '⚡';
     if(/갈멜|엘리야|불/.test(t)) return '🔥';
     if(/바알|우상/.test(t)) return '🛕';
@@ -124,7 +126,7 @@ function renderExplore(items){
     return '🔹';
   }
 
-  const labels = [
+  const labels=[
     '❓ 핵심질문',
     '💡 한 줄 핵심',
     '📖 사건의 의미',
@@ -135,42 +137,96 @@ function renderExplore(items){
   ];
 
   function splitItem(x){
-    let raw = '';
-    if(typeof x === 'string'){
-      raw = String(x || '').trim();
+    let raw='';
+    if(typeof x==='string'){
+      raw=String(x||'').trim();
     }else{
-      const title = String(x?.title || x?.label || '').trim();
-      const text = String(x?.text || x?.content || x?.body || '').trim();
-      raw = (title + (text ? ' ' + text : '')).trim();
+      const title=String(x?.title||x?.label||'').trim();
+      const text=String(x?.text||x?.content||x?.body||'').trim();
+      raw=(title+(text?' '+text:'')).trim();
     }
 
-    raw = raw.replace(/\s*\|\s*/g, ' ');
+    raw=raw.replace(/\s*\|\s*/g,' ');
 
     for(const label of labels){
       if(raw.startsWith(label)){
-        return {title: label, text: raw.slice(label.length).trim()};
+        return {title:label, text:raw.slice(label.length).trim()};
       }
     }
+    return {title:'', text:raw};
+  }
 
-    return {title: '', text: raw};
+  function flowToText(flow){
+    if(!Array.isArray(flow)) return String(flow||'');
+    return flow.map(f=>{
+      if(typeof f==='string') return f;
+      const icon=f.icon?f.icon+' ':'';
+      return icon + (f.title || f.text || f.label || '');
+    }).join(' → ');
   }
 
   function verticalFlowHtml(text){
-    const raw = String(text || '').trim();
-    const parts = raw.split(/\s*(?:→|↓)\s*/).map(v => v.trim()).filter(Boolean);
-    if(parts.length < 2) return escapeLocal(raw).replace(/\n/g, '<br>');
-    return parts.map(step => {
-      const labeled = hasEmoji(step) ? step : `${iconForStep(step)} ${step}`;
+    const raw=String(text||'').trim();
+    const parts=raw.split(/\s*(?:→|↓)\s*/).map(v=>v.trim()).filter(Boolean);
+    if(parts.length<2) return escapeLocal(raw).replace(/\n/g,'<br>');
+    return parts.map(step=>{
+      const labeled=hasEmoji(step)?step:`${iconForStep(step)} ${step}`;
       return escapeLocal(labeled);
     }).join('<br>↓<br>');
   }
 
-  return (items || []).map(x => {
-    const item = splitItem(x);
-    const isFlow = /연결\s*흐름|성경\s*전체\s*흐름/.test(item.title) || item.text.includes('→') || item.text.includes('↓');
-    const body = isFlow ? verticalFlowHtml(item.text) : escapeLocal(item.text).replace(/\n/g, '<br>');
-    return `<div class="exploreCard">${item.title ? `<b>${escapeLocal(item.title)}</b>` : ''}<p>${body}</p></div>`;
-  }).join('');
+  function renderItem(x){
+    const item=splitItem(x);
+    const isFlow=/연결\s*흐름|성경\s*전체\s*흐름/.test(item.title)||item.text.includes('→')||item.text.includes('↓');
+    const body=isFlow?verticalFlowHtml(item.text):escapeLocal(item.text).replace(/\n/g,'<br>');
+    return `<div class="exploreCard">${item.title?`<b>${escapeLocal(item.title)}</b>`:''}<p>${body}</p></div>`;
+  }
+
+  if(Array.isArray(value)){
+    return `<div class="exploreGrid">${value.map(renderItem).join('')}</div>`;
+  }
+
+  if(value && typeof value==='object' && (value.summary || value.flow || value.thought)){
+    const titleForFlow=value.flowTitle||'연결 흐름';
+    const items=[];
+    if(value.summary) items.push({title:'📖 사건의 의미', text:value.summary});
+    if(value.flow) items.push({title:`🔗 ${titleForFlow}`, text:flowToText(value.flow)});
+    if(value.thought) items.push({title:'🤔 생각해보기', text:value.thought});
+    return `<div class="exploreGrid">${items.map(renderItem).join('')}</div>`;
+  }
+
+  return `<div class="exploreGrid">${renderItem(value||'')}</div>`;
+}
+
+function buildConnectionExplore(h){
+  const m=h.meaning||{};
+  const flowText=Array.isArray(m.flow)?m.flow.map(f=>{
+    if(typeof f==='string') return f;
+    return (f.icon?f.icon+' ':'')+(f.title||f.text||f.label||'');
+  }).join(' → '):(m.flow||'');
+  return [
+    {title:'❓ 핵심질문', text:h.question||''},
+    {title:'💡 한 줄 핵심', text:h.oneLine||''},
+    {title:'📖 사건의 의미', text:m.summary||''},
+    {title:'🔗 연결 흐름', text:flowText},
+    {title:'🤔 생각해보기', text:m.thought||''}
+  ].filter(x=>x.text);
+}
+
+function buildIntegrationExplore(h){
+  const g=h.integration||{};
+  const flowText=Array.isArray(g.flow)?g.flow.map(f=>{
+    if(typeof f==='string') return f;
+    return (f.icon?f.icon+' ':'')+(f.title||f.text||f.label||'');
+  }).join(' → '):(g.flow||'');
+  const shortSummary=String(g.summary||'').split(/[.!?。]/)[0];
+  return [
+    {title:'❓ 핵심질문', text:`${(h.title||'이 사건').replace(/ 허브$/,'')}은 성경 전체 흐름에서 무엇을 보여주는가?`},
+    {title:'💡 한 줄 핵심', text:shortSummary||h.oneLine||''},
+    {title:'📖 구속사 의미', text:g.summary||''},
+    {title:'🌍 성경 전체 흐름', text:flowText},
+    {title:'🤔 생각해보기', text:g.thought||''}
+  ].filter(x=>x.text);
 }
 
 function renderListOrFlow(value){
