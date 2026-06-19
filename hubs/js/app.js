@@ -95,16 +95,15 @@ ${current.question?`
   $('nextBtn').textContent=current.nextLabel||'다음 허브';
 }
 
-
 function renderExplore(items){
-  function escapeLocal(s){
-    return String(s||'').replace(/[&<>"']/g, m=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[m]));
-  }
-  function hasEmoji(s){
-    return /[\u{1F300}-\u{1FAFF}\u{2600}-\u{27BF}]/u.test(String(s||''));
-  }
-  function iconForStep(s){
-    const t=String(s||'');
+  const escapeLocal = (s) => String(s ?? '').replace(/[&<>"']/g, m => ({
+    '&':'&amp;', '<':'&lt;', '>':'&gt;', '"':'&quot;', "'":'&#39;'
+  }[m]));
+
+  const hasEmoji = (s) => /[\u{1F300}-\u{1FAFF}\u{2600}-\u{27BF}]/u.test(String(s||''));
+
+  function iconForStep(step){
+    const t = String(step||'');
     if(/왕국분열|분열|르호보암|여로보암/.test(t)) return '⚡';
     if(/갈멜|엘리야|불/.test(t)) return '🔥';
     if(/바알|우상/.test(t)) return '🛕';
@@ -125,7 +124,7 @@ function renderExplore(items){
     return '🔹';
   }
 
-  const labels=[
+  const labels = [
     '❓ 핵심질문',
     '💡 한 줄 핵심',
     '📖 사건의 의미',
@@ -136,41 +135,41 @@ function renderExplore(items){
   ];
 
   function splitItem(x){
-    let raw='';
-    if(typeof x==='string'){
-      raw=String(x||'').trim();
+    let raw = '';
+    if(typeof x === 'string'){
+      raw = String(x || '').trim();
     }else{
-      const t=String(x.title||x.label||'').trim();
-      const body=String(x.text||x.content||x.body||'').trim();
-      raw=(t + (body ? ' ' + body : '')).trim();
+      const title = String(x?.title || x?.label || '').trim();
+      const text = String(x?.text || x?.content || x?.body || '').trim();
+      raw = (title + (text ? ' ' + text : '')).trim();
     }
 
-    raw=raw.replace(/\s*\|\s*/g,' ');
+    raw = raw.replace(/\s*\|\s*/g, ' ');
 
     for(const label of labels){
       if(raw.startsWith(label)){
-        return {title:label, text:raw.slice(label.length).trim()};
+        return {title: label, text: raw.slice(label.length).trim()};
       }
     }
 
-    return {title:'', text:raw};
+    return {title: '', text: raw};
   }
 
   function verticalFlowHtml(text){
-    const raw=String(text||'').trim();
-    const parts=raw.split(/\s*(?:→|↓)\s*/).map(v=>v.trim()).filter(Boolean);
-    if(parts.length<2) return escapeLocal(raw).replace(/\n/g,'<br>');
-    return parts.map(step=>{
-      const labeled=hasEmoji(step) ? step : `${iconForStep(step)} ${step}`;
+    const raw = String(text || '').trim();
+    const parts = raw.split(/\s*(?:→|↓)\s*/).map(v => v.trim()).filter(Boolean);
+    if(parts.length < 2) return escapeLocal(raw).replace(/\n/g, '<br>');
+    return parts.map(step => {
+      const labeled = hasEmoji(step) ? step : `${iconForStep(step)} ${step}`;
       return escapeLocal(labeled);
     }).join('<br>↓<br>');
   }
 
-  return (items||[]).map(x=>{
-    const item=splitItem(x);
-    const isFlow=/연결\s*흐름|성경\s*전체\s*흐름/.test(item.title) || item.text.includes('→') || item.text.includes('↓');
-    const body=isFlow ? verticalFlowHtml(item.text) : escapeLocal(item.text).replace(/\n/g,'<br>');
-    return `<div class="exploreCard"><b>${escapeLocal(item.title)}</b><p>${body}</p></div>`;
+  return (items || []).map(x => {
+    const item = splitItem(x);
+    const isFlow = /연결\s*흐름|성경\s*전체\s*흐름/.test(item.title) || item.text.includes('→') || item.text.includes('↓');
+    const body = isFlow ? verticalFlowHtml(item.text) : escapeLocal(item.text).replace(/\n/g, '<br>');
+    return `<div class="exploreCard">${item.title ? `<b>${escapeLocal(item.title)}</b>` : ''}<p>${body}</p></div>`;
   }).join('');
 }
 
