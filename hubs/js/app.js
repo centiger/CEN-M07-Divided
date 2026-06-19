@@ -95,25 +95,83 @@ ${current.question?`
   $('nextBtn').textContent=current.nextLabel||'다음 허브';
 }
 
-function renderExplore(value){
-  if(value && typeof value==='object' && !Array.isArray(value) && (value.summary || value.flow || value.thought)){
-    const flow = Array.isArray(value.flow) ? value.flow : [];
-    return `<div class="exploreBox">
-      ${value.summary?`<div class="exploreSummary">${formatText(value.summary)}</div>`:''}
-      ${flow.length?`
-        <div class="exploreFlowTitle">${escapeHtml(value.flowTitle||'연결 흐름')}</div>
-        <div class="exploreFlow">
-          ${flow.map((item,idx)=>`
-            ${idx?'<div class="flowArrow">↓</div>':''}
-            <div class="exploreNode">
-              <div class="exploreIcon">${escapeHtml(item.icon||'•')}</div>
-              <div><b>${escapeHtml(item.title||'')}</b><span>${escapeHtml(item.text||'')}</span></div>
-            </div>`).join('')}
-        </div>`:''}
-      ${value.thought?`<div class="thinkBox"><b>🤔 생각해보기</b><p>${formatText(value.thought)}</p></div>`:''}
-    </div>`;
+
+function renderExplore(items){
+  function escapeLocal(s){
+    return String(s||'').replace(/[&<>"']/g, m=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[m]));
   }
-  return renderListOrFlow(value);
+  function hasEmoji(s){
+    return /[\u{1F300}-\u{1FAFF}\u{2600}-\u{27BF}]/u.test(String(s||''));
+  }
+  function iconForStep(s){
+    const t=String(s||'');
+    if(/왕국분열|분열|르호보암|여로보암/.test(t)) return '⚡';
+    if(/갈멜|엘리야|불/.test(t)) return '🔥';
+    if(/바알|우상/.test(t)) return '🛕';
+    if(/북이스라엘|사마리아|멸망/.test(t)) return '🏚️';
+    if(/앗수르|산헤립|침공/.test(t)) return '⚔️';
+    if(/히스기야|기도/.test(t)) return '🙏';
+    if(/이사야|선지자|아모스|호세아|예레미야/.test(t)) return '📣';
+    if(/요시야|개혁/.test(t)) return '👑';
+    if(/율법|말씀/.test(t)) return '📖';
+    if(/예루살렘|성전/.test(t)) return '🏛️';
+    if(/바벨론|포로/.test(t)) return '⛓️';
+    if(/귀환|회복/.test(t)) return '🚶';
+    if(/다윗|다윗 계보|다윗언약/.test(t)) return '👑';
+    if(/예수|그리스도|십자가|메시아/.test(t)) return '✝️';
+    if(/열방|이방/.test(t)) return '🌍';
+    if(/교회/.test(t)) return '⛪';
+    if(/새창조|새 예루살렘/.test(t)) return '👑';
+    return '🔹';
+  }
+
+  const labels=[
+    '❓ 핵심질문',
+    '💡 한 줄 핵심',
+    '📖 사건의 의미',
+    '📖 구속사 의미',
+    '🔗 연결 흐름',
+    '🌍 성경 전체 흐름',
+    '🤔 생각해보기'
+  ];
+
+  function splitItem(x){
+    let raw='';
+    if(typeof x==='string'){
+      raw=String(x||'').trim();
+    }else{
+      const t=String(x.title||x.label||'').trim();
+      const body=String(x.text||x.content||x.body||'').trim();
+      raw=(t + (body ? ' ' + body : '')).trim();
+    }
+
+    raw=raw.replace(/\s*\|\s*/g,' ');
+
+    for(const label of labels){
+      if(raw.startsWith(label)){
+        return {title:label, text:raw.slice(label.length).trim()};
+      }
+    }
+
+    return {title:'', text:raw};
+  }
+
+  function verticalFlowHtml(text){
+    const raw=String(text||'').trim();
+    const parts=raw.split(/\s*(?:→|↓)\s*/).map(v=>v.trim()).filter(Boolean);
+    if(parts.length<2) return escapeLocal(raw).replace(/\n/g,'<br>');
+    return parts.map(step=>{
+      const labeled=hasEmoji(step) ? step : `${iconForStep(step)} ${step}`;
+      return escapeLocal(labeled);
+    }).join('<br>↓<br>');
+  }
+
+  return (items||[]).map(x=>{
+    const item=splitItem(x);
+    const isFlow=/연결\s*흐름|성경\s*전체\s*흐름/.test(item.title) || item.text.includes('→') || item.text.includes('↓');
+    const body=isFlow ? verticalFlowHtml(item.text) : escapeLocal(item.text).replace(/\n/g,'<br>');
+    return `<div class="exploreCard"><b>${escapeLocal(item.title)}</b><p>${body}</p></div>`;
+  }).join('');
 }
 
 function renderListOrFlow(value){
