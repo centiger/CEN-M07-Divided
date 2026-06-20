@@ -118,7 +118,7 @@
           "url": "https://centiger.github.io/cen-bible-chrololgy/?view=timeline"
         },
         {
-          "label": "연결탐험",
+          "label": "Meaning",
           "url": "https://centiger.github.io/cen-bible-chrololgy/#hub"
         }
       ],
@@ -301,7 +301,7 @@
           "hub": "carmel"
         },
         {
-          "label": "히스기야와 앗수르 위기",
+          "label": "히스기야 위기",
           "hub": "hezekiah-assyria"
         },
         {
@@ -316,7 +316,7 @@
       "prev": "carmel",
       "next": "hezekiah-assyria",
       "prevLabel": "갈멜산 대결",
-      "nextLabel": "히스기야와 앗수르 위기",
+      "nextLabel": "히스기야 위기",
       "verse": "열왕기하 17:7\n이 일은 이스라엘 자손이 자기를 애굽 땅에서 인도하여 내신 그들의 하나님 여호와께 죄를 범하고 또 다른 신들을 경외하며",
       "events": [
         "여로보암의 금송아지 숭배",
@@ -527,7 +527,7 @@
       ],
       "prev": "north-israel-fall",
       "next": "josiah-reform",
-      "prevLabel": "북이스라엘 멸망",
+      "prevLabel": "북이스라엘",
       "nextLabel": "요시야 개혁",
       "verse": "열왕기하 19:35\n그 밤에 여호와의 사자가 나와서 앗수르 진영에서 십팔만 오천 명을 친지라",
       "message": "진정한 믿음은 위기가 없을 때가 아니라 위기 가운데 누구를 의지하는지에서 드러난다.",
@@ -713,7 +713,7 @@
       ],
       "links": [
         {
-          "label": "히스기야와 앗수르 위기",
+          "label": "히스기야 위기",
           "hub": "hezekiah-assyria"
         },
         {
@@ -731,7 +731,7 @@
       ],
       "prev": "hezekiah-assyria",
       "next": "jerusalem-fall",
-      "prevLabel": "히스기야와 앗수르 위기",
+      "prevLabel": "히스기야 위기",
       "nextLabel": "예루살렘 함락",
       "verse": "열왕기하 23:25\n요시야와 같이 마음을 다하며 뜻을 다하며 힘을 다하여 여호와께로 돌아온 왕은 없었더라",
       "message": "회복은 하나님께 돌아가는 데서 시작된다. 말씀은 무너진 신앙을 다시 세우는 하나님의 도구이다.",
@@ -923,13 +923,13 @@
           "url": "../index.html"
         },
         {
-          "label": "포로귀환시대 Matrix",
+          "label": "포로귀환 Matrix",
           "url": "https://centiger.github.io/CEN-M08-Return/"
         }
       ],
       "prev": "josiah-reform",
       "prevLabel": "요시야 개혁",
-      "nextLabel": "포로귀환시대 Matrix로 이동",
+      "nextLabel": "포로귀환 Matrix로 이동",
       "nextUrl": "https://centiger.github.io/CEN-M08-Return/",
       "next": null,
       "verse": "열왕기하 25:9\n여호와의 성전과 왕궁을 불사르고 예루살렘의 모든 집을 귀인의 집까지 불살랐으며",
