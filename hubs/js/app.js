@@ -50,7 +50,7 @@ function renderHub(slug){
   current=HUBS.find(h=>h.slug===slug)||HUBS[0];
   if(!current)return;
   $('appTitle').textContent=current.title;
-  $('appSub').textContent=current.subtitle||'분열왕국시대 허브탐험';
+  $('appSub').textContent=current.subtitle||'분열왕국 핵심사건 확장탐험';
   $('hero').innerHTML=`
 ${current.kicker?`<div class="kicker">${escapeHtml(current.kicker)}</div>`:''}
 ${current.question?`
